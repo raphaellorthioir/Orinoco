@@ -1,0 +1,195 @@
+body {
+  font-size: 1em;
+  margin: 0;
+  font-family: "Dancing Script", cursive;
+}
+
+p {
+  margin: 2px;
+}
+
+.align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 70%;
+}
+
+.nameProduct {
+  width: 100%;
+  font-size: 30px;
+}
+
+.yellow {
+  background: #f3ca20;
+}
+
+.cartContainer {
+  display: none;
+}
+
+nav {
+  height: 50px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+nav .cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cartIcon {
+  color: black;
+  font-size: 20px;
+}
+
+.space {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.black {
+  background: black;
+  color: #f3ca20;
+}
+
+.underline {
+  -webkit-text-decoration: underline black;
+          text-decoration: underline black;
+}
+
+.submitBtn, .validOrder {
+  background: #f3ca20;
+  font-family: "Dancing Script", cursive;
+  font-size: 2em;
+  border-radius: 5px;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.table {
+  width: 60%;
+  margin: 0 50px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid black;
+}
+
+thead th:nth-child(1) {
+  width: 40%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+}
+
+thead th:nth-child(4) {
+  width: 20%;
+}
+
+td input {
+  width: 50px;
+}
+
+td {
+  text-align: center;
+}
+
+th, th {
+  padding: 10px;
+}
+
+.form {
+  width: 50%;
+}
+
+.formSpace {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  float: left;
+  width: 100px;
+  font-size: 20px;
+}
+
+.totalPrice {
+  margin-left: 20px;
+}
+
+.validOrder {
+  font-size: 30px;
+  margin-top: 30px;
+}/*# sourceMappingURL=style.css.map */
