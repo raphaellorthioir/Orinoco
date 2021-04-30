@@ -3,7 +3,10 @@ body {
   margin: 0;
   font-family: "Dancing Script", cursive;
 }
-
+#x{
+  width: auto;
+  height: auto;
+}
 p {
   margin: 2px;
 }
