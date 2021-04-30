@@ -1,12 +1,10 @@
 body {
   font-size: 1em;
   margin: 0;
-  font-family: "Dancing Script", cursive;
+  font-family: "Fredoka One", cursive,sans-serif;
+  
 }
-#x{
-  width: auto;
-  height: auto;
-}
+
 p {
   margin: 2px;
 }
@@ -51,6 +49,12 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 104px;
+  width: auto;
+}
+
+.logo img {
+  margin: 0;
 }
 
 main {
@@ -66,8 +70,9 @@ main {
   font-size: 30px;
 }
 
-.yellow {
-  background: #f3ca20;
+.mainBackground {
+  background: #fcb045;
+  background: linear-gradient(45deg, rgba(252, 176, 69, 0.8491771709) 0%, rgba(152, 58, 180, 0.84357493) 100%);
 }
 
 .cartContainer {
@@ -75,8 +80,8 @@ main {
 }
 
 nav {
-  height: 50px;
-  width: 100px;
+  height: auto;
+  width: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,8 +91,11 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 50px;
+  margin-right: 50px;
 }
-nav .cart {
+
+.cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
