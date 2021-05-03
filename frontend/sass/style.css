@@ -1,8 +1,7 @@
 body {
   font-size: 1em;
   margin: 0;
-  font-family: "Fredoka One", cursive,sans-serif;
-  
+  font-family: "Fredoka One", cursive;
 }
 
 p {
@@ -19,6 +18,48 @@ p {
           flex-direction: row;
 }
 
+.addCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.greyBgd {
+  background: #ececec;
+}
+
+.chooseNumber {
+  height: 20px;
+  width: 30px;
+  margin: 0 5px;
+}
+
+.howMuch {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.howMuchBtn {
+  font-size: large;
+  background: #aaaaaa;
+  border: solid black 1px;
+  border-radius: 3px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.borderBlack {
+  border: solid black 1px;
+  padding: 20px;
+}
+
 .col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,6 +68,15 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.left {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
 .center {
@@ -62,7 +112,11 @@ main {
   margin-right: auto;
   margin-top: 100px;
   margin-bottom: 100px;
-  width: 70%;
+  width: 90%;
+}
+
+.price {
+  font-size: 25px;
 }
 
 .nameProduct {
@@ -76,26 +130,59 @@ main {
 }
 
 .cartContainer {
-  display: none;
-}
-
-nav {
+  visibility: hidden;
+  position: absolute;
+  text-align: center;
+  width: 300px;
   height: auto;
-  width: auto;
+  -webkit-transition: display 1s;
+  transition: display 1s;
+  background: #e0e0e0;
+  border: solid black 2px;
+  top: 30x;
+  right: 155px;
+  -webkit-transition: visibility 0.5s;
+  transition: visibility 0.5s;
+}
+.cartContainer ul {
+  padding: 0 5px;
+}
+.cartContainer ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 50px;
-  margin-right: 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 16px;
+  width: 100%;
 }
 
-.cart {
+nav:hover .cartContainer {
+  visibility: visible;
+}
+
+.slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: auto;
+  height: auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav {
+  height: 100%;
+  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,9 +198,66 @@ nav {
           justify-content: center;
 }
 
+.cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+  border-radius: 35px;
+  width: 70px;
+  height: auto;
+  padding: 5px;
+  border: solid 3px black;
+}
+
+.count {
+  font-size: 25px;
+  margin-left: 10px;
+}
+
 .cartIcon {
   color: black;
-  font-size: 20px;
+  font-size: 25px;
+}
+
+h1 {
+  margin-left: 50px;
+}
+
+figure {
+  width: 500px;
+  margin: 0;
+  border: solid black 2px;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+figcaption {
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .space {
@@ -132,15 +276,48 @@ nav {
 }
 
 .submitBtn, .validOrder {
-  background: #f3ca20;
-  font-family: "Dancing Script", cursive;
-  font-size: 2em;
-  border-radius: 5px;
-  width: 250px;
+  font-family: "Fredoka One", cursive;
+  background: #cfcfcf;
+  font-size: 1em;
+  border: solid black 1px;
+  border-radius: 30px;
+  width: 200px;
   height: 50px;
   cursor: pointer;
 }
 
+.submitBtn:hover, .validOrder:hover {
+  background: linear-gradient(45deg, rgba(252, 176, 69, 0.8491771709) 0%, rgba(152, 58, 180, 0.84357493) 100%);
+  /* box-shadow: 3px 3px 1px 1px black ;*/
+  -webkit-animation: bgdAnim 0.3s alternate forwards;
+          animation: bgdAnim 0.3s alternate forwards;
+}
+
+@-webkit-keyframes bgdAnim {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-box-shadow: 0px 0px 5px 7px rgba(64, 88, 221, 0.514);
+            box-shadow: 0px 0px 5px 7px rgba(64, 88, 221, 0.514);
+  }
+}
+
+@keyframes bgdAnim {
+  from {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  to {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-box-shadow: 0px 0px 5px 7px rgba(64, 88, 221, 0.514);
+            box-shadow: 0px 0px 5px 7px rgba(64, 88, 221, 0.514);
+  }
+}
 .table {
   width: 60%;
   margin: 0 50px;
@@ -177,6 +354,9 @@ td input {
 td {
   text-align: center;
 }
+td img {
+  margin-right: 10px;
+}
 
 th, th {
   padding: 10px;
@@ -189,12 +369,25 @@ th, th {
 .formSpace {
   margin-bottom: 30px;
 }
+.formSpace input {
+  margin-left: 30px;
+}
 
 label {
   display: block;
   float: left;
   width: 100px;
   font-size: 20px;
+}
+
+.priceLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .totalPrice {
@@ -218,7 +411,57 @@ li {
 footer h2 {
   text-decoration: underline;
 }
+footer ul {
+  padding: 0;
+}
+footer p {
+  font-size: 24px;
+}
 
 .contact p {
   font-size: 25px;
+}
+
+.custom {
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 1200px) {
+  main .align {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main .table {
+    width: auto;
+  }
+  main .howMuch {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media screen and (max-width: 650px) {
+  footer .align {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .form {
+    margin: 30px 0;
+  }
+  .form input {
+    margin: 0;
+  }
+
+  .priceLine {
+    margin: 30px 0;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="../sass/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orinoco</title>
+        <link rel="stylesheet" href="../sass/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <meta name="description" content="">
+        <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
+        <script type="" src="../js/list.js" ></script>
+    </head>
 <body>
     <header class="align nav mainBackground">
         <div class="logo">
             <a href="../../index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
         </div>
         <nav>
+       
              <div class="cart">
-
-                <div class="count"> 0</div>
-                    <a class="cartIcon" href="./frontend/html/cart.html"><i class="fas fa-cart-arrow-down"></i></a>
-                    <div class="cartContainer"> <!-- shows the products in cart-->
-                        <ul>
-                           <li class="align">
-                               <img src="" alt="">
-                               <p> Caméra vintage</p>
-                               <div class="totalBill"> </div>
-                           </li>
-                        </ul>
-                    </div>
+                 <a class="cartIcon" href="./frontend/html/cart.html"><i class="fas fa-cart-arrow-down"></i></a>
+                 <div class="count"> 0</div>
+             </div>
+             <div class="cartContainer "> <!-- shows the products in cart-->
+                    <ul>
+                       <li class="align center ">
+                           <img src="../img/camera.jpg" width="70px" height="50px" alt="">
+                           <p> Caméra vintage <br> (x<span class="numberOfProduct">1</span>)</p>
+                           <div class="totalBill"> 150 €</div>
+                       </li>
+                    </ul>
                 </div>
-          </nav>
+         </nav>
     </header>
     <main>
         <section>
             <div class="align lineProduct space">
-                <img src="camera.jpg" alt="">
-                <div class="col ">
+                <img src="../img/camera.jpg" alt="">
+                <div class="col left greyBgd borderBlack">
                     <h1 class="underline"> Caméra vintage</h1>
-                    <p class="price"> 299.99€</p>
+                    <p class="price"> Prix:  299.99€</p>
                     <div class=" col custom">
                        <h2 class="underline">Choix de lentilles de caméra</h2> 
                        <div class="col drop">
@@ -52,7 +52,13 @@
                          </ul>
                        </div>
                      </div>
-                    <div class="addCart">
+                     <div class="howMuch align center ">
+                         <button class="howMuchBtn" type="button">-</button>
+                        <input class="chooseNumber" type="number">
+                        <button class="howMuchBtn" type="button">+</button>
+                            
+                     </div>
+                    <div class="addCart center">
                        <button class="submitBtn" type="submit"> Ajouter au panier</button>
                     </div>
                  </div>
