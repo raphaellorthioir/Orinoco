@@ -268,6 +268,7 @@ figcaption{
      th,th{
          padding: 10px;
      }
+    
 .form{
     width: 50%;
 }
@@ -345,10 +346,17 @@ align-items: center;
  @media screen and (max-width:650px) {
 
     footer{
+    
         .align{
             flex-direction: column;
+            
+            
         }
     }
+    .footList{
+        margin-left: 20px;
+    }
+   
     .form{
 
         margin: 30px 0;
