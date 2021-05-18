@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <title>Orinoco</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Orinoco</title>
         <link rel="stylesheet" href="../sass/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <meta name="description" content="">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-        <script type="" src="../js/list.js" ></script>
+        <script src="../js/list.js" ></script>
     </head>
 <body>
     <header class="align nav mainBackground">
         <div class="logo">
-            <a href="../../index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
+            <a href="index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
         </div>
-        <nav>
-       
-             <div class="cart">
-                 <a class="cartIcon" href="./frontend/html/cart.html"><i class="fas fa-cart-arrow-down"></i></a>
-                 <div class="count"> 0</div>
-             </div>
+        <nav class="center">
+    
+            <div class="cart">
+                <a class="cartIcon align center" href="cart.html"><i class="fas fa-running"></i><i class="fas fa-cart-arrow-down"></i></a>
+                <div class="count"> 0</div>
+            </div>
              <div class="cartContainer "> <!-- shows the products in cart-->
-                    <ul>
-                       <li class="align center ">
-                           <img src="../img/camera.jpg" width="70px" height="50px" alt="">
-                           <p> Caméra vintage <br> (x<span class="numberOfProduct">1</span>)</p>
-                           <div class="totalBill"> 150 €</div>
-                       </li>
-                    </ul>
-                </div>
-         </nav>
+                <p>Votre panier</p>
+                 <ul>
+                    <li>
+                         <a class="align space center" href="product.html">
+                            <img src="../img/camera.jpg" width="70" height="50" alt="">
+                             <div class="nameCamera"> Caméra Zurs 50S <span class="numberOfProduct">(x1)</span></div>
+                            <div class="totalProductPrice"> 150 €</div>
+                         </a>
+                         <div class="deleteProduct">Supprimer du panier</div>
+                     </li>
+                </ul>
+                <div> Sous-total: <span class="cartValue"> 150€</span></div>
+            </div>  
+        </nav>
     </header>
     <main>
-        <section class="align">
+        <section class="align space-b responsiveCol ">
             <div class="table">
                 <h1>Votre Panier</h1>
                <table>
@@ -44,7 +49,7 @@
                            <th colspan="1"> Description</th>
                        
                        
-                          <th colspan="1">prix unitaire</th> 
+                          <th colspan="1">Prix unitaire</th> 
                        
                        
                            <th colspan="1">Quantité</th>
@@ -54,44 +59,45 @@
                    </thead>
                    <tbody >
                        <tr>
-                           <td > <img src="../img/camera.jpg" width="70px" height="50px" alt=""> <p>Caméra vintage</p></td>
-                           <td>199.99€</td>
+                           <td class="align center">
+                               <a href="product.html"> <img src="../img/camera.jpg" width="70" height="50" alt=""></a> 
+                                <p class="modelCamera"> Caméra Zurs 50S</p>
+                            </td>
+                           <td class="unitPrice">199.99€</td>
                            <td>
-                            <div class="howMuch ">
+                            <div class=" align center">
                                 <button class="howMuchBtn" type="button">-</button>
-                               <input class="chooseNumber" type="number">
+                                <div class="chooseNumber"></div>
                                <button class="howMuchBtn" type="button">+</button>
-                                   
-                            </div>
+                             </div>
                            </td>
                            <td></td>
                        </tr>
                    </tbody>
                </table>
             </div>
-            <div class="col form center ">
+            <div class="col form center  ">
                 <h2>Coordonnées</h2>
-                <form action="" >
-                    <div class="formName formSpace">
-                        <label for="name"> Nom:</label>
-                        <input type="text" id="name" name="user_name" required aria-required="true">
+                <form >
+                    <div class="formName  formSpace ">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="user_name" required aria-required="true" placeholder="Votre nom" >
                     </div>
                     <div class="formMail formSpace">
-                        <label for="userMail">Mail:</label>
-                        <input type="email" id="userMail" required aria-required="true">
+                        <label for="userMail"></label>
+                        <input type="email" id="userMail" required aria-required="true" placeholder="Votre email">
                     </div>
-                    <div class="formPhoneNumber formSpace">
-                        <label for="userPhoneNumber"> Téléphone:</label>
-                        <input type="tel" id="userPhoneNumber" required aria-required="true">
+                    <div class="formPhoneNumber  formSpace ">
+                        <label for="userPhoneNumber"></label>
+                        <input type="tel" id="userPhoneNumber" required aria-required="true" placeholder="Téléphone">
                     </div>
-                    <div class="formUserAdress formSpace">
-                        <label for="userAdress">Adresse :</label>
-                        <input type="text" id="userAdress" required aria-required="true">
+                    <div class="formUserAdress a formSpace ">
+                        <label for="userAdress"></label>
+                        <input type="text" id="userAdress" required aria-required="true" placeholder="Votre adresse">
                     </div>
                 </form>
                 <div class="priceLine">
-                    <div>Coût Total :</div>
-                    <div class="totalPrice"> 199.99€</div>
+                    <div> Panier total : <span class="cartValue"> 199.99€</span> </div>
                 </div>
                 <input class="validOrder" type="submit" value="Commander">
             </div>
@@ -114,7 +120,7 @@
             <div class="footList"> 
                 <h2> Orinoquoi ?</h2>
                 <ul>
-                    <li>À propos</li>
+                    <li>A propos</li>
                     <li>Instagram</li>
                     <li>Facebook</li>
                     <li>Twitter</li>

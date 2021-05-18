@@ -1,74 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <title>Orinoco</title>
+        <meta name="description" content="Achetez caméra vintage model Zurs 50S - Au prix de 49900€- Choix parmis deux types de lentilles optiques">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Orinoco</title>
         <link rel="stylesheet" href="../sass/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-        <meta name="description" content="">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-        <script type="" src="../js/list.js" ></script>
+        <script  src="../js/list.js" ></script>
     </head>
 <body>
     <header class="align nav mainBackground">
         <div class="logo">
-            <a href="../../index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
-        </div>
-        <nav>
+             <a href="index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
+           </div>
+        <nav class="center">
        
-             <div class="cart">
-                 <a class="cartIcon" href="./frontend/html/cart.html"><i class="fas fa-cart-arrow-down"></i></a>
-                 <div class="count"> 0</div>
-             </div>
-             <div class="cartContainer "> <!-- shows the products in cart-->
-                    <ul>
-                       <li class="align center ">
-                           <img src="../img/camera.jpg" width="70px" height="50px" alt="">
-                           <p> Caméra vintage <br> (x<span class="numberOfProduct">1</span>)</p>
-                           <div class="totalBill"> 150 €</div>
-                       </li>
-                    </ul>
-                </div>
-         </nav>
+           <div class="cart">
+                <a class="cartIcon align center" href="cart.html"><i class="fas fa-running"></i><i class="fas fa-cart-arrow-down"></i></a>
+                <div class="count"> 0</div>
+            </div>
+            <div class="cartContainer "> <!-- shows the products in cart-->
+               <h3>Votre panier</h3>
+                 <ul>
+                    <li>
+                       <a class="align space center" href="product.html">
+                            <img class="cartImg" src="../img/camera.jpg"  alt=" Caméra vintage Zurs 50s">
+                            <div class="nameCamera"> Caméra Zurs 50S <span class="numberOfProduct">(x1)</span></div>
+                           <div class="totalProductPrice"> 150 €</div>
+                        </a>
+                        <div class="deleteProduct">Supprimer du panier</div>
+                   </li>
+                </ul>
+               <p> Sous-total: <span class="cartValue"> 150€</span></p>
+               <p class="emptyCart">Panier vide</p>
+            </div>  
+        </nav>
     </header>
     <main>
-        <section>
-            <div class="align lineProduct space">
-                <img src="../img/camera.jpg" alt="">
-                <div class="col left greyBgd borderBlack">
-                    <h1 class="underline"> Caméra vintage</h1>
-                    <p class="price"> Prix:  299.99€</p>
-                    <div class=" col custom">
-                       <h2 class="underline">Choix de lentilles de caméra</h2> 
-                       <div class="col drop">
-                         <h2>Personnalisation</h2>
-                         <ul>
-                             <li>petite lentille</li>
-                             <li>moyenne lentille</li>
-                             <li>grosse lentille</li>
-                         </ul>
-                       </div>
-                     </div>
-                     <div class="howMuch align center ">
-                         <button class="howMuchBtn" type="button">-</button>
-                        <input class="chooseNumber" type="number">
-                        <button class="howMuchBtn" type="button">+</button>
-                            
-                     </div>
-                    <div class="addCart center">
-                       <button class="submitBtn" type="submit"> Ajouter au panier</button>
+        <div class="align space-b respProductPage">
+            <section>
+                <div class=" align padding responsiveCol ">
+                    <img src="../img/camera.jpg" alt="Caméra model Zurs 50S">
+                    <div class="product-info">
+                        <h1 > Caméra Zurs 50S - <span class="priceProduct">49900€</span></h1>
+                        <p class="description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad fugit consequuntur iure optio quidem harum blanditiis <br> pariatur vitae excepturi voluptatem saepe asperiores id iste eveniet sit cum explicabo, mollitia eos?</p>
+                        <div class="ratingBox align space center">
+                            <p>Votre avis :</p>
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social align space center">
+                            <p>Partager:</p>
+                            <a href="#" Title=" Partager sur Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" Title="Partager sur Twitter"><i class="fab fa-twitter"></i></a>
+
+                        </div>
                     </div>
-                 </div>
-                
-            </div>
-          
-            
-        </section>
-     
-        
+                </div>
+            </section>   
+            <section>
+                <div class=" addCartArea col  space center">
+                    <div class=" col ">
+                       <h2><label for="lens-select">Lentilles de caméra</label></h2> 
+
+                        <select name="lens" id="lens-select">
+                            <option value=""> Choix de lentille</option>
+                            <option value="lenses[0]">35mm 1.4</option>
+                            <option value="lenses[1]">50mm 1.6</option>
+                        </select>
+                    </div>
+                    <div class="align center quantity">
+                        <h2>Quantité:</h2>
+                        <div class=" align howMuchLine ">
+                            <button class="howMuchBtn" type="button">-</button>
+                            <div class="chooseNumber"></div>
+                            <button class="howMuchBtn" type="button">+</button>
+                            </div>
+                    </div>
+                    <button class="addCartBtn" type="submit"> Ajouter au panier</button>
+                </div>
+             </section>
+        </div>
     </main>
     <footer>
         <div class="align space mainBackground"> 
@@ -90,16 +113,13 @@
                     <li>Instagram</li>
                     <li>Facebook</li>
                     <li>Twitter</li>
-                </ul></div>
-           
+                </ul>
+            </div>
             <div>
                 <h2>Contactez nous</h2>
                 <p> 23, Rue de l'espelette <br> 75003 Paris, France <br> orinoco@gmail.com</p>
             </div>
-           
-        </div>
-            
-        
-    </footer>
+         </div>
+     </footer>
 </body>
 </html>

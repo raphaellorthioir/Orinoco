@@ -13,26 +13,31 @@
         <script type="" src="../js/list.js" ></script>
     </head>
 <body>
-    <header class="align nav mainBackground">
+    <header class="align  mainBackground">
         <div class="logo">
-            <a href="../../index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
+            <a href="index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
         </div>
         <nav>
-       
-             <div class="cart">
-                 <a class="cartIcon" href="./frontend/html/cart.html"><i class="fas fa-cart-arrow-down"></i></a>
-                 <div class="count"> 0</div>
-             </div>
+    
+            <div class="cart">
+                <a class="cartIcon" href="cart.html"><i class="fas fa-cart-arrow-down"></i></a>
+                <div class="count"> 0</div>
+            </div>
              <div class="cartContainer "> <!-- shows the products in cart-->
-                    <ul>
-                       <li class="align center ">
-                           <img src="../img/camera.jpg" width="70px" height="50px" alt="">
-                           <p> Caméra vintage <br> (x<span class="numberOfProduct">1</span>)</p>
-                           <div class="totalBill"> 150 €</div>
-                       </li>
-                    </ul>
-                </div>
-         </nav>
+                <p>Votre panier</p>
+                 <ul>
+                    <li>
+                         <a class="align space" href="product.html">
+                            <img src="../img/camera.jpg" width="70px" height="50px" alt="">
+                             <div class="nameCamera"> Caméra Zurs 50S <span class="numberOfProduct">(x1)</span></div>
+                            <div class="totalProductPrice"> 150 €</div>
+                         </a>
+                     </li>
+                </ul>
+                <div> Sous-total: <span class="cartValue"> 150€</span></div>
+                </div>  
+            </div>
+        </nav>
     </header>
     <main>
         <div class="commandConfirmed">
