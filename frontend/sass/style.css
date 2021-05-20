@@ -1103,6 +1103,13 @@ footer ul {
             flex-direction: unset;
   }
 
+  footer .align {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
   .responsiveCol {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1156,12 +1163,6 @@ footer ul {
   width: auto;
 }
 
-footer .align {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
 footer .mainBackground {
   padding-left: 20px;
 }

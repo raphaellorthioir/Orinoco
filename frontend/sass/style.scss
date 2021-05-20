@@ -794,6 +794,9 @@ label{
     .align{
         flex-direction: unset;
     }
+    footer .align{
+        flex-direction: column;
+    }
     .responsiveCol{
         flex-direction: column;
     }
@@ -846,9 +849,7 @@ label{
     
     footer{
     
-        .align{
-            flex-direction: column;
-         }
+     
         .mainBackground{
             padding-left: 20px;
         }
