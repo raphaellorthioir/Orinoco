@@ -7,15 +7,10 @@
     <title>Orinoco</title>
     <meta name="description" content="Orinoco est un site de vente en ligne vous proposant un large choix de produits dans des domaines spécifiques. Laissez vous tenter par notre sélection minutieuse de caméras vintages ! ">
     <link rel="stylesheet" href="../sass/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-    <script src="../dist/app.bundle.js"></script>
-    <script src="/polyfill.bundle.js"></script>
+    <script src="../js/index.js"></script>
 </head>
 <body>
     <div id="grayFilter">
@@ -55,14 +50,14 @@
          <section class="border3d col ">
 
              <div class="align center responsiveCol">
-                <button id="allProducts" onclick="addImage()">cliquer</button> 
-                <!--<figure id="startImg1">
+
+               
+                <figure id="startImg1">
                     <div class="photoArea bgdImg1 center">
                          <img src="../img/camera.jpg" alt="">
-                    </div>-->
-                  
+                    </div>
                     <figcaption>
-                        <h2 class="nameCamera">* Caméra vintage Zurs 50S * </h2>
+                        <h2 id="nameCamera"> </h2>
                         <a href="product.html" class="detailBtn align space"><i class="fas fa-camera-retro"></i> <p> Je flash ! </p> </a>
                     </figcaption>
                 </figure>
