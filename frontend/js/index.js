@@ -1,31 +1,47 @@
 
- /* let cameras;
 
- const searchCameras= async() => {
-   cameras= await  fetch('http://localhost:3000/api/cameras')
-   .then(res => res.json());
   
-   console.log(cameras);
-};*/
-
-/*let getAllCamera = url
-  let nameCamera = document.getElementById("nameCamera");*/
-  
-  // création d'une constante contenat l'URL//
+  // création d'une constante contenant l'URL//
   const url = 'http://localhost:3000/api/cameras';
-  // connexion à l'Api//
-  function apiCall() {
-   fetch(url)
-     //on récupére la réponse de fetch et on le rend lisible par le navigateur en transformant la réponse au format JSON//
-     .then((resp) => resp.json());
 
- };
+  // connexion à l'Api//
   
-   
+   /* fetch(url)
+      //on récupére la réponse de fetch et on le rend lisible par le navigateur en transformant la réponse au format JSON//
+      .then(res =>res.json())
+      
+      .then(data => image.src = data[2].imageUrl )*/ //Affiche une image par défaut
+
+     
+      // Autre tentative//
+      
+      function apiCall(){
+      fetch(url)
+      .then((resp) => resp.json())
+       
+      // On récupère une Promise qui prend en paramètre les données de l'api//
+      .then(function(cameras){
+        console.log(cameras)
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+   }
+     
+     apiCall();
+     
+ // try/ catch pour remarquer si il y a des erreurs dans l'appel de l'Api
+ /*try{
+  apiCall();
+ } catch(e){
+   console.log("Erreur dans l'appel de l'Api "+ e)
+   window.alert("Erreur du serveur , veuillez patienter")
+ }*/
+  
     // fonction qui affiche toutes les caméras//
 
-    const getAllFigures = function () {
-
+     const getAllFigures = function () {
+    
        for(let i=0;i<=4;i++){
        
         let element = document.getElementById('createFigure')
@@ -41,7 +57,8 @@
         let img = document.createElement('img')
         bgd.appendChild(img);
         img.setAttribute('class','showImage')
-        img.setAttribute('src','../img/vcam_1.jpg');
+        img.setAttribute('id','img')
+        //img.setAttribute('src',imageUrl);
         let figcaption = document.createElement('figcaption')
         figure.appendChild(figcaption)
         let title = document.createElement('h2')

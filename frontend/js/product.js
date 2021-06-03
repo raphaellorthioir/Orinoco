@@ -1,6 +1,6 @@
 // fonction qui affiche le produit avec image, nom, prix, description , notation et liens de partage//.
 
-const getProduct = function(){
+const getPageProduct = function(){
     let display = document.getElementById('showProduct')
     let img = document.createElement('img')
     display.appendChild(img)
@@ -27,5 +27,5 @@ const getProduct = function(){
     console.log(rate)
 }
 window.addEventListener("DOMContentLoaded", () => {
-    getProduct();
+    getPageProduct();
 });
