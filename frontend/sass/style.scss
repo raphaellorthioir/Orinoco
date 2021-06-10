@@ -667,6 +667,16 @@ figcaption{
         transform: scale(1.1);
      }
  }
+ #showProduct{
+     img{
+         width: 300px;
+         height: 200px;
+     }
+ }
+ .priceProduct{
+     margin-left: 10px;
+ }
+
  .table{
      width: 70%;
      padding-top: 50px;

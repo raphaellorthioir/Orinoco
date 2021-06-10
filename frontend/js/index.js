@@ -1,49 +1,36 @@
 
 
-  
-  // création d'une constante contenant l'URL//
-  const url = 'http://localhost:3000/api/cameras';
+
+// création d'une constante contenant l'URL//
+const url = 'http://localhost:3000/api/cameras';
+
  
   // connexion à l'Api//
-  
-   /*  fetch(url)
-      //on récupére la réponse de fetch et on le rend lisible par le navigateur en transformant la réponse au format JSON//
-      .then(res =>res.json())
-      
-      .then(data => image.src = data[3].imageUrl ) //Affiche une image par défaut*/
-      (async function(){
-        const cameras = await getCameras()
-        var i=0;
-        for(camera of cameras){
-          i++;
-          displayCameras(camera,i)
+
+        function callApi (){
+        return fetch(url)
+       .then((resp) => resp.json())
+        
+       // On récupère une Promise qui prend en paramètre les données de l'api//
+       .then(function(cameras){
+        return cameras
+       })
+       .catch(function(error){
+         alert(error)
+       });
+    } 
+
           
-        }
-      })()
-      
-      // Autre tentative//
-      
-      async function getCameras(){
-       return fetch(url)
-      .then((resp) => resp.json())
-       
-      // On récupère une Promise qui prend en paramètre les données de l'api//
-      .then(function(cameras){
-       return cameras
-      })
-      .catch(function(error){
-        alert(error)
-      });
-   }
-     
-     
- // try/ catch pour remarquer si il y a des erreurs dans l'appel de l'Api
- /*try{
-  apiCall();
- } catch(e){
-   console.log("Erreur dans l'appel de l'Api "+ e)
-   window.alert("Erreur du serveur , veuillez patienter")
- }*/
+        ( async function getAllCameras (){
+          cameras = await callApi()
+          var i=0;
+          for(camera of cameras){
+            i++;
+            displayCameras(camera,i)
+             }
+         })();
+
+
   
     // fonction qui affiche toutes les caméras//
 
@@ -69,7 +56,7 @@
             title.setAttribute('id','nameCamera')
             let link =document.createElement('a')
             figcaption.appendChild(link)
-            link.setAttribute("href","product.html")
+            link.setAttribute("href",`product.html?id=${camera._id}`) // ajout du paramètre dans l'URl de la page produit pour identifier le produit seléctionné//
             link.setAttribute('class','detailBtn align space')
             let icon = document.createElement('i')
             link.appendChild(icon)
@@ -81,4 +68,4 @@
          
        };
 
-       
+   

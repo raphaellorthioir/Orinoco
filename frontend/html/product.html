@@ -10,8 +10,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
+        <script type="module"  src="../js/modules/url.js"> </script>
         <script  src="../js/product.js" ></script>
-    </head>
+        
+        
 <body>
     <header class="align nav mainBackground">
         <div class="logo">
@@ -28,7 +30,7 @@
                  <ul>
                     <li>
                        <a class="align space center" href="product.html">
-                            <img class="cartImg" src="../img/camera.jpg"  alt=" Caméra vintage Zurs 50s">
+                            <img class="cartImg" src=""  alt=" Caméra vintage Zurs 50s">
                             <div class="nameCamera"> Caméra Zurs 50S <span class="numberOfProduct">(x1)</span></div>
                            <div class="totalProductPrice"> 150 €</div>
                         </a>
@@ -75,11 +77,12 @@
                     <div class=" col ">
                        <h2><label for="lens-select">Lentilles de caméra</label></h2> 
 
-                        <select name="lens" id="lens-select">
-                            <option value=""> Choix de lentille</option>
-                            <option value="lenses[0]">35mm 1.4</option>
-                            <option value="lenses[1]">50mm 1.6</option>
-                        </select>
+                       <select name="lenses" id="lense-select" >
+                           <option value="" >Choix de lentille</option>
+                           
+                            
+                       </select>
+                       
                     </div>
                     <div class="align center quantity">
                         <h2>Quantité:</h2>
