@@ -308,7 +308,7 @@ nav{
     
 
     &:hover {
-        .cartContainer{
+        #cartContainer{
             display: block;
             animation: cartSlide 1s ease forwards;
         }
@@ -332,7 +332,7 @@ nav{
         }
     }
 
-.cart{
+#cart{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -341,6 +341,7 @@ nav{
     border-radius: 30px;
     width: 70px;
     height: auto;
+    margin: 10px ;
     padding: 5px;
     border: solid 1px black;
     transition: width 0.4s ease, border-radius 0.1s ease ;
@@ -359,9 +360,7 @@ nav{
                margin-top: 15px;
                animation: slideHumanIcon 0.5s ease forwards;
            }
-           .count{
-               display: none;
-           }
+         
            
            box-shadow: white 0px 0px 3px 2px ;
        }
@@ -376,7 +375,7 @@ nav{
             transform: translate(0);
         }
     }
-    .cartContainer{
+    #cartContainer{
         display: none;
         z-index: 1;
         text-align: center;
@@ -401,7 +400,7 @@ nav{
      display: none;
  }
 
-.count{
+#count{
     font-size: 25px;
     margin-left: 10px;
     font-weight: 600;

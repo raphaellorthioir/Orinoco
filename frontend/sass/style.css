@@ -405,7 +405,7 @@ a {
 nav {
   padding-right: 20px;
 }
-nav:hover .cartContainer {
+nav:hover #cartContainer {
   display: block;
   -webkit-animation: cartSlide 1s ease forwards;
           animation: cartSlide 1s ease forwards;
@@ -431,7 +431,7 @@ nav a:hover .nameCamera {
     right: 0;
   }
 }
-.cart {
+#cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -449,34 +449,32 @@ nav a:hover .nameCamera {
   border-radius: 30px;
   width: 70px;
   height: auto;
+  margin: 10px;
   padding: 5px;
   border: solid 1px black;
   -webkit-transition: width 0.4s ease, border-radius 0.1s ease;
   transition: width 0.4s ease, border-radius 0.1s ease;
 }
-.cart .fa-running {
+#cart .fa-running {
   display: none;
   -webkit-transform: translate(-50px, 0);
           transform: translate(-50px, 0);
 }
-.cart:hover {
+#cart:hover {
   -webkit-box-shadow: white 0px 0px 3px 2px;
           box-shadow: white 0px 0px 3px 2px;
 }
-.cart:hover .fa-running {
+#cart:hover .fa-running {
   display: block;
   margin-bottom: 5px;
   font-size: 35px;
   -webkit-animation: slideHumanIcon 0.5s ease forwards;
           animation: slideHumanIcon 0.5s ease forwards;
 }
-.cart:hover .fa-cart-arrow-down {
+#cart:hover .fa-cart-arrow-down {
   margin-top: 15px;
   -webkit-animation: slideHumanIcon 0.5s ease forwards;
           animation: slideHumanIcon 0.5s ease forwards;
-}
-.cart:hover .count {
-  display: none;
 }
 
 @-webkit-keyframes slideHumanIcon {
@@ -504,7 +502,7 @@ nav a:hover .nameCamera {
             transform: translate(0);
   }
 }
-.cartContainer {
+#cartContainer {
   display: none;
   z-index: 1;
   text-align: center;
@@ -519,10 +517,10 @@ nav a:hover .nameCamera {
   top: 70px;
   right: -400px;
 }
-.cartContainer ul {
+#cartContainer ul {
   padding: 0;
 }
-.cartContainer li {
+#cartContainer li {
   border-bottom: 1px solid black;
 }
 
@@ -530,7 +528,7 @@ nav a:hover .nameCamera {
   display: none;
 }
 
-.count {
+#count {
   font-size: 25px;
   margin-left: 10px;
   font-weight: 600;

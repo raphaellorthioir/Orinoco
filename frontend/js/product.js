@@ -5,9 +5,9 @@
  const urlSearchParams = new URLSearchParams(queryString_url_id);
  const id = urlSearchParams.get("id")
  
-  // connexion à l'Api//
 // création d'une constante contenant l'URL avec en paramètre l'id de l'objet//
 const url = `http://localhost:3000/api/cameras/${id}`;
+
 
         async function callApi (){
         return fetch(url)
@@ -27,16 +27,13 @@ const url = `http://localhost:3000/api/cameras/${id}`;
           camera = await callApi()
           let lenses= camera.lenses
           getPageProduct(camera)
+          createCart();
           for(lense of lenses){
             displayLenses(lense)
           }
-        
-         
-          
          })()
-
+        
 // fonction qui affiche le produit avec image, nom, prix, description , notation et liens de partage//.
-
 
 const getPageProduct = function(camera){
     let display = document.getElementById('showProduct')
@@ -61,16 +58,46 @@ const getPageProduct = function(camera){
     info.appendChild(rate)
     let social =document.getElementById('social')
     info.appendChild(social)
-  
+  }
+ // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
-   
-}
- 
 displayLenses = function(lense){
  
     let select = document.getElementById('lense-select').appendChild(document.createElement('option'))
-    let createOption = document.createElement("option")
-    select.appendChild(createOption)
-    createOption.textContent= lense
+    select.setAttribute("value",lense)
+    select.textContent= lense
+ }
+
+
+// création du panier
+
+  function createCart (){
+  
     
+
+  let cartCount = document.getElementById("cartCount")
+  let counter = document.createElement('div')
+  counter.setAttribute('id','count')
+  cartCount.appendChild(counter)
+  
+  let divContainer = document.createElement('div')
+  divContainer.setAttribute('id','cartContainer')
+  cart.appendChild(divContainer)
+  let title = document.createElement('h3')
+  title.textContent="Votre panier"
+  divContainer.appendChild(title)
+  let uList = document.createElement('ul')
+  divContainer.appendChild(uList)
+
+  
+
+ /* linkCartPage.setAttribute("class","cartIcon align center")
+  linkCartPage.setAttribute("href","cart.html")
+  c
+  let iconCart1 = document.createElement("i")
+  let iconCart2 = document.createElement("i")
+
+  linkCartPage.appendChild(iconCart1,iconCart2)*/
+  
 }
+ 

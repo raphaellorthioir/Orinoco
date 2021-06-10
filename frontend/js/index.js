@@ -1,5 +1,7 @@
 
+// test import url
 
+//import {url} from './modules/url.js'
 
 // création d'une constante contenant l'URL//
 const url = 'http://localhost:3000/api/cameras';
