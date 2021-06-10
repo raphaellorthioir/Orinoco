@@ -432,26 +432,6 @@ nav a:hover .nameCamera {
   }
 }
 #cart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: white;
-  border-radius: 30px;
-  width: 70px;
-  height: auto;
-  margin: 10px;
-  padding: 5px;
-  border: solid 1px black;
   -webkit-transition: width 0.4s ease, border-radius 0.1s ease;
   transition: width 0.4s ease, border-radius 0.1s ease;
 }
@@ -459,10 +439,6 @@ nav a:hover .nameCamera {
   display: none;
   -webkit-transform: translate(-50px, 0);
           transform: translate(-50px, 0);
-}
-#cart:hover {
-  -webkit-box-shadow: white 0px 0px 3px 2px;
-          box-shadow: white 0px 0px 3px 2px;
 }
 #cart:hover .fa-running {
   display: block;
@@ -502,6 +478,16 @@ nav a:hover .nameCamera {
             transform: translate(0);
   }
 }
+#cartCount {
+  background: white;
+  border-radius: 30px;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  padding: 5px;
+  border: solid 1px black;
+}
+
 #cartContainer {
   display: none;
   z-index: 1;

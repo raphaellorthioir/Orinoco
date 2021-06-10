@@ -71,23 +71,18 @@ displayLenses = function(lense){
 
 // création du panier
 
-  function createCart (){
+  function cartCounter (){
   
-    
-
-  let cartCount = document.getElementById("cartCount")
-  let counter = document.createElement('div')
-  counter.setAttribute('id','count')
-  cartCount.appendChild(counter)
   
-  let divContainer = document.createElement('div')
-  divContainer.setAttribute('id','cartContainer')
+  let divcounter = document.getElementById('count')
+  
+ /* divContainer.setAttribute('id','cartContainer')
   cart.appendChild(divContainer)
   let title = document.createElement('h3')
   title.textContent="Votre panier"
   divContainer.appendChild(title)
   let uList = document.createElement('ul')
-  divContainer.appendChild(uList)
+  divContainer.appendChild(uList)*/
 
   
 

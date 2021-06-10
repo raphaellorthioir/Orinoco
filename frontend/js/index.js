@@ -66,8 +66,6 @@ const url = 'http://localhost:3000/api/cameras';
             let text =document.createElement('p')
             link.appendChild(text)
             text.textContent="Je flash !";
-           
-         
-       };
+          };
 
    
