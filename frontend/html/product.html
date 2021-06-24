@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-        <script type="module"  src="../js/modules/url.js"> </script>
+        <script type="module"  src="../js/modules/callApi.js"> </script>
         <script  src="../js/product.js" ></script>
         
         
@@ -87,12 +87,12 @@
                     <div class="align center quantity">
                         <h2>Quantité:</h2>
                         <div class=" align howMuchLine ">
-                            <button class="howMuchBtn" type="button">-</button>
-                            <div class="chooseNumber"></div>
-                            <button class="howMuchBtn" type="button">+</button>
+                            <button id="lessBtn" class="howMuchBtn" type="button">-</button>
+                            <div id="productQty" class="chooseNumber"></div>
+                            <button id="plusBtn "class="howMuchBtn" type="button">+</button>
                             </div>
                     </div>
-                    <button class="addCartBtn" type="submit"> Ajouter au panier</button>
+                    <button id="addCart" class="addCartBtn" type="submit"> Ajouter au panier</button>
                 </div>
              </section>
         </div>

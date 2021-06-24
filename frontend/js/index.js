@@ -1,40 +1,18 @@
 
 // test import url
+import {url,callApi} from './modules/callApi.js'
 
-//import {url} from './modules/url.js'
-
-// création d'une constante contenant l'URL//
-const url = 'http://localhost:3000/api/cameras';
-
- 
-  // connexion à l'Api//
-
-        function callApi (){
-        return fetch(url)
-       .then((resp) => resp.json())
-        
-       // On récupère une Promise qui prend en paramètre les données de l'api//
-       .then(function(cameras){
-        return cameras
-       })
-       .catch(function(error){
-         alert(error)
-       });
-    } 
-
-          
-        ( async function getAllCameras (){
-          cameras = await callApi()
-          var i=0;
-          for(camera of cameras){
-            i++;
-            displayCameras(camera,i)
-             }
-         })();
-
-
+( async function getAllCameras (){
+   let cameras = await callApi()
+   var i=0;
+   let camera;
+  for(camera of cameras){
+    i++;
+   displayCameras(camera,i)
+     }
+  })();
   
-    // fonction qui affiche toutes les caméras//
+  // fonction qui affiche toutes les caméras//
 
         function displayCameras (camera,i) {
             
@@ -67,5 +45,7 @@ const url = 'http://localhost:3000/api/cameras';
             link.appendChild(text)
             text.textContent="Je flash !";
           };
+
+   
 
    

@@ -1,10 +1,11 @@
-// récupération de la chaîne de requête dans l'Url
+
+// récupération de la chaîne de requête dans l'Url (?+...)
  const queryString_url_id = window.location.search;
 
- // extraction de l'id
+ // création constructeur renvoyant un objet url 
  const urlSearchParams = new URLSearchParams(queryString_url_id);
+ //on récupère la valeur de la clé indiqué en paramètre
  const id = urlSearchParams.get("id")
- 
 // création d'une constante contenant l'URL avec en paramètre l'id de l'objet//
 const url = `http://localhost:3000/api/cameras/${id}`;
 
@@ -27,7 +28,6 @@ const url = `http://localhost:3000/api/cameras/${id}`;
           camera = await callApi()
           let lenses= camera.lenses
           getPageProduct(camera)
-          createCart();
           for(lense of lenses){
             displayLenses(lense)
           }
@@ -58,41 +58,72 @@ const getPageProduct = function(camera){
     info.appendChild(rate)
     let social =document.getElementById('social')
     info.appendChild(social)
-  }
+
+     // gestion quantité de produit
+     
+     var productQty = 1;
+     let lessBtn = document.querySelector("#lessBtn")
+     let plusBtn = document.querySelector("#plusBtn")
+     let qty = document.getElementById('productQty')
+         qty.textContent =`${productQty}`
+     
+    plusBtn.addEventListener("click", ()=>{
+       
+      qty.textContent =`${productQty++}`
+      
+   })
+     
+
+    }
+  
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
-displayLenses = function(lense){
+let displayLenses = function(lense){
  
-    let select = document.getElementById('lense-select').appendChild(document.createElement('option'))
+    select = document.getElementById('lense-select').appendChild(document.createElement('option'))
     select.setAttribute("value",lense)
     select.textContent= lense
  }
+ 
+
+
+   
+  
+ /*let lessBtn = document.getElementById('lessBtn')
+ lessBtn.addEventListener("click", function(){
+   
+ })
+ let plusBtn = document.getElementById('plusBtn')
+*/
+ // Local storage
+
+
 
 
 // création du panier
 
-  function cartCounter (){
+ /*  function cartCounter (){
   
   
   let divcounter = document.getElementById('count')
-  
- /* divContainer.setAttribute('id','cartContainer')
+
+  divContainer.setAttribute('id','cartContainer')
   cart.appendChild(divContainer)
   let title = document.createElement('h3')
   title.textContent="Votre panier"
   divContainer.appendChild(title)
   let uList = document.createElement('ul')
-  divContainer.appendChild(uList)*/
+  divContainer.appendChild(uList)
 
   
 
- /* linkCartPage.setAttribute("class","cartIcon align center")
+  linkCartPage.setAttribute("class","cartIcon align center")
   linkCartPage.setAttribute("href","cart.html")
   c
   let iconCart1 = document.createElement("i")
   let iconCart2 = document.createElement("i")
 
-  linkCartPage.appendChild(iconCart1,iconCart2)*/
+  linkCartPage.appendChild(iconCart1,iconCart2)
   
-}
+ }*/
  
