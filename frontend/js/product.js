@@ -29,7 +29,7 @@ const url = `http://localhost:3000/api/cameras/${id}`;
           let lenses= camera.lenses
           getPageProduct(camera)
           for(lense of lenses){
-            displayLenses(lense)
+             displayLenses(lense)
           }
          })()
         
@@ -68,62 +68,47 @@ const getPageProduct = function(camera){
          qty.textContent =`${productQty}`
      
     plusBtn.addEventListener("click", ()=>{
-       
-      qty.textContent =`${productQty++}`
+       productQty++
+      qty.textContent =`${productQty}`;
       
    })
-     
+     lessBtn.addEventListener("click",() =>{
+       if(productQty>1){
+        productQty--
+        qty.textContent=`${productQty}`
+       }
+       })
 
-    }
+       
+ 
   
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
-
+let chosenOption;
 let displayLenses = function(lense){
  
     select = document.getElementById('lense-select').appendChild(document.createElement('option'))
     select.setAttribute("value",lense)
+    select.setAttribute("id","option")
     select.textContent= lense
- }
- 
-
-
+    
+    let optSelected= document.querySelector("#lense-select");
+    optSelected.addEventListener("change",()=>{
+    chosenOption=optSelected.value;
+    console.log(chosenOption)
+    })
+    }
+   /*  // local storage
+      
+        
+     let addCart = document.querySelector("#addCart")
+     addCart.addEventListener("click",()=>{
    
-  
- /*let lessBtn = document.getElementById('lessBtn')
- lessBtn.addEventListener("click", function(){
-   
- })
- let plusBtn = document.getElementById('plusBtn')
-*/
- // Local storage
+       localStorage.setItem("nom",camera.name)
+       localStorage.setItem("prix",camera.price)
+       localStorage.setItem("id",camera._id)
+       localStorage.setItem("quantité",productQty)
+       localStorage.setItem("option",chosenOption)
+        })*/
+  }
 
 
-
-
-// création du panier
-
- /*  function cartCounter (){
-  
-  
-  let divcounter = document.getElementById('count')
-
-  divContainer.setAttribute('id','cartContainer')
-  cart.appendChild(divContainer)
-  let title = document.createElement('h3')
-  title.textContent="Votre panier"
-  divContainer.appendChild(title)
-  let uList = document.createElement('ul')
-  divContainer.appendChild(uList)
-
-  
-
-  linkCartPage.setAttribute("class","cartIcon align center")
-  linkCartPage.setAttribute("href","cart.html")
-  c
-  let iconCart1 = document.createElement("i")
-  let iconCart2 = document.createElement("i")
-
-  linkCartPage.appendChild(iconCart1,iconCart2)
-  
- }*/
- 
