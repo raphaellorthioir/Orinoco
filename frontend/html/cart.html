@@ -10,21 +10,22 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <meta name="description" content="">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-        <script src="../js/list.js" ></script>
+        <script src="../js/cart.js" ></script>
+        
     </head>
 <body>
     <header class="align nav mainBackground">
         <div class="logo">
             <a href="index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
         </div>
-        <nav class="center">
-    
-            <div class="cart">
-                <a class="cartIcon align center" href="cart.html"><i class="fas fa-running"></i><i class="fas fa-cart-arrow-down"></i></a>
-                <div class="count"> 0</div>
+        <nav id="cart" class=" col center center">
+       
+            <div id="cartCount" class="align space ">
+                 <a class="cartIcon align center" href="cart.html"><i class="fas fa-running"></i><i class="fas fa-cart-arrow-down"></i></a>
+                 <div id="count"></div>
             </div>
              <div class="cartContainer "> <!-- shows the products in cart-->
-                <p>Votre panier</p>
+              <!--  <p>Votre panier</p>
                  <ul>
                     <li>
                          <a class="align space center" href="product.html">
@@ -35,14 +36,14 @@
                          <div class="deleteProduct">Supprimer du panier</div>
                      </li>
                 </ul>
-                <div> Sous-total: <span class="cartValue"> 150€</span></div>
+                <div> Sous-total: <span class="cartValue"> 150€</span></div>> -->
             </div>  
         </nav>
     </header>
     <main>
         <section class="align space-b responsiveCol ">
-            <div class="table">
-                <h1>Votre Panier</h1>
+            <div  class="table">
+               <h1>Votre Panier</h1>
                <table>
                    <thead>
                        <tr>
@@ -59,22 +60,22 @@
                    </thead>
                    <tbody >
                        <tr>
-                           <td class="align center">
-                               <a href="product.html"> <img src="../img/camera.jpg" width="70" height="50" alt=""></a> 
-                                <p class="modelCamera"> Caméra Zurs 50S</p>
+                           <td id="description" class="align center">
+                               <!--<a href="product.html"> <img src="../img/camera.jpg" width="70" height="50" alt=""></a> 
+                                <p class="modelCamera"> Caméra Zurs 50S</p>-->
                             </td>
-                           <td class="unitPrice">199.99€</td>
-                           <td>
+                           <td id="price"></td>
+                           <td id="qty">
                             <div class=" align center">
                                 <button class="howMuchBtn" type="button">-</button>
-                                <div class="chooseNumber"></div>
+                                <div id="chooseQty"class="chooseNumber"></div>
                                <button class="howMuchBtn" type="button">+</button>
                              </div>
                            </td>
-                           <td></td>
+                           <td id="total"></td>
                        </tr>
                    </tbody>
-               </table>
+               </table> 
             </div>
             <div class="col form center  ">
                 <h2>Coordonnées</h2>
