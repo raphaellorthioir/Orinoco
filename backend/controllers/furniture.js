@@ -22,6 +22,7 @@ exports.getOneFurniture = (req, res, next) => {
     (furniture) => {
       if (!furniture) {
         return res.status(404).send(new Error('Furniture not found!'));
+      
       }
       furniture.imageUrl = req.protocol + '://' + req.get('host') + '/images/' + furniture.imageUrl;
       res.status(200).json(furniture);
@@ -60,7 +61,7 @@ exports.orderFurniture = (req, res, next) => {
   for (let productId of req.body.products) {
     const queryPromise = new Promise((resolve, reject) => {
       Furniture.findById(productId).then(
-        (furniture) => {
+        (furniture) => {  
           if (!furniture) {
             reject('Camera not found: ' + productId);
           }

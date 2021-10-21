@@ -29,22 +29,36 @@ const url = `http://localhost:3000/api/cameras/${id}`;
         ( async function getCameraPage (){
           camera = await callApi()
           let lenses= camera.lenses
+          let lense;
           getPageProduct(camera)
           for(lense of lenses){
             displayLenses(lense)
           }
-         })()
-  
-         var productQty= 1 ; 
-         var panier = [];
-         var objet ={};
-         let chosenOption;
+          })()
+         
+         let objet={}
+       
          
          
         
 // fonction qui affiche le produit avec image, nom, prix, description , notation et liens de partage//.
 
+let displayLenses = function(lense){
+ 
+  select = document.getElementById('lense-select').appendChild(document.createElement('option'))
+  select.setAttribute("value",lense)
+  select.setAttribute("id","option")
+  select.textContent= lense
+  
+  let optSelected= document.querySelector("#lense-select");
+  optSelected.addEventListener("change",()=>{
+  objet.option=optSelected.value;
+  })
+  return objet.option
+}
 const getPageProduct = function(camera){
+
+  
     let display = document.getElementById('showProduct')
     let img = document.createElement('img')
     display.appendChild(img)
@@ -73,66 +87,51 @@ const getPageProduct = function(camera){
    objet.id = camera._id;
      // gestion quantité de produit
      
+     var productQty=1;
      
      let lessBtn = document.querySelector("#lessBtn")
      let plusBtn = document.querySelector("#plusBtn")
      let qty = document.getElementById('productQty')
          qty.textContent =`${productQty}`
      
+    
     plusBtn.addEventListener("click", ()=>{
+       
        productQty++
-       objet.quantite= productQty;
        qty.textContent =`${productQty}`;
+      
        })
      lessBtn.addEventListener("click",() =>{
        if(productQty>1){
         productQty--
-        objet.quantite= productQty;
         qty.textContent=`${productQty}`
+        
          }
-       })
+        })
+        
 
-       
   // local storage
   let addCart = document.querySelector("#addCart")
-  let nbOfOrder=1;
- 
+
   addCart.addEventListener("click",()=>{
-    if(localStorage.length==0){
-      var commandeJson = JSON.stringify(objet);
-      localStorage.setItem(`commande${nbOfOrder}`, commandeJson)
-    }
-    else{
-      var commandeJson = JSON.stringify(objet);
-      localStorage.setItem(`commande${nbOfOrder + localStorage.length}`, commandeJson)
-      
-    }
     
+    let ls=JSON.parse(localStorage.getItem("produit"));
+    objet.quantite = productQty;
+     if (ls){
+     
+      ls.push(objet);
+      localStorage.setItem("produit", JSON.stringify(ls));
+     }
+
+   else{
+     ls=[];
+     ls.push(objet);
+     localStorage.setItem("produit", JSON.stringify(ls));
+  }
+  console.log(ls)
 })
-  
-    
-   /* localStorage.setItem("nom",camera.name)
-    localStorage.setItem("prix",camera.price)
-    localStorage.setItem("id",camera._id)
-    localStorage.setItem("quantité",productQty)
-    localStorage.setItem("option",chosenOption)*/
-  
-  
 }
-  
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
- let displayLenses = function(lense){
  
-  select = document.getElementById('lense-select').appendChild(document.createElement('option'))
-  select.setAttribute("value",lense)
-  select.setAttribute("id","option")
-  select.textContent= lense
-  
-  let optSelected= document.querySelector("#lense-select");
-  optSelected.addEventListener("change",()=>{
-  objet.option=optSelected.value;
-  console.log(objet.option)
-  })
-}
   

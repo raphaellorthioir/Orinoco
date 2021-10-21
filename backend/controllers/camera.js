@@ -18,7 +18,7 @@ exports.getAllCameras = (req, res, next) => {
 };
 
 exports.getOneCamera = (req, res, next) => {
-  Camera.findById(req.params.id).then(
+  Camera.findById(req.params.id).then( 
     (camera) => {
       if (!camera) {
         return res.status(404).send(new Error('Camera not found!'));
@@ -63,6 +63,7 @@ exports.orderCameras = (req, res, next) => {
         (camera) => {
           if (!camera) {
             reject('Camera not found: ' + productId);
+              
           }
           camera.imageUrl = req.protocol + '://' + req.get('host') + '/images/' + camera.imageUrl;
           resolve(camera);
