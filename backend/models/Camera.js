@@ -6,7 +6,7 @@ const cameras = [
     ],
     "_id": "5be1ed3f1c9d44000030b061",
     "name": "Zurss 50S",
-    "price": 49900,
+    "price": 499,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "imageUrl": "vcam_1.jpg"
   },
@@ -19,7 +19,7 @@ const cameras = [
     "_id": "5be1ef211c9d44000030b062",
     "name": "Hirsch 400DTS",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "price": 309900,
+    "price": 310,
     "imageUrl": "vcam_2.jpg"
   },
   {
@@ -28,7 +28,7 @@ const cameras = [
     ],
     "_id": "5be9bc241c9d440000a730e7",
     "name": "Franck JS 105",
-    "price": 209900,
+    "price": 210,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "imageUrl": "vcam_3.jpg"
   },
@@ -40,7 +40,7 @@ const cameras = [
     "_id": "5be9c4471c9d440000a730e8",
     "name": "Kuros TTS",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "price": 159900,
+    "price": 160,
     "imageUrl": "vcam_4.jpg"
   },
   {
@@ -52,7 +52,7 @@ const cameras = [
     "_id": "5be9c4c71c9d440000a730e9",
     "name": "Katatone",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "price": 59900,
+    "price": 600,
     "imageUrl": "vcam_5.jpg"
   }
 ];

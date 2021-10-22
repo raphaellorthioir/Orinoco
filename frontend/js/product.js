@@ -36,9 +36,9 @@ const url = `http://localhost:3000/api/cameras/${id}`;
           }
           })()
          
-         let objet={}
-       
          
+       
+         let objet={}
          
         
 // fonction qui affiche le produit avec image, nom, prix, description , notation et liens de partage//.
@@ -58,7 +58,10 @@ let displayLenses = function(lense){
 }
 const getPageProduct = function(camera){
 
-  
+
+  objet={
+    prix:camera.price
+  }
     let display = document.getElementById('showProduct')
     let img = document.createElement('img')
     display.appendChild(img)
@@ -121,15 +124,27 @@ const getPageProduct = function(camera){
      
       ls.push(objet);
       localStorage.setItem("produit", JSON.stringify(ls));
+      popupconfirmation();
      }
 
    else{
      ls=[];
      ls.push(objet);
      localStorage.setItem("produit", JSON.stringify(ls));
+     popupconfirmation();
   }
   console.log(ls)
 })
+//fonction fenêtre popup
+const popupconfirmation= () =>{
+  if(window.confirm( `${objet.name} avec option: ${objet.option} a bien été ajouté au panier
+
+  Consulter le panier OK ou revenir à la page d'accueil Annuler`)){
+    window.location.href="cart.html";
+  }else{
+    window.location.href="index.html";
+  }
+}
 }
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
