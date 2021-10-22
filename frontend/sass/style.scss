@@ -887,7 +887,41 @@ label{
     .priceLine{
         margin: 30px 0;
     }
-    
+
+    #popup{
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        border-radius:15px;
+        background-color: white;
+        border: rgba(0, 0, 0, 0.089) solid 1px;
+        box-shadow: rgba(0, 0, 0, 0.527) 0px 0px 5px 2px;
+        
+        p{
+            font-size: 2em;
+            font-family:noto,sans-serif
+        }
+        #answers{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            #yes, #no{
+                cursor: pointer;
+            }
+
+        }
+        
+    }
 
  @media  screen and (max-width:1400px) {
      
