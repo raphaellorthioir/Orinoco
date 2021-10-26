@@ -115,25 +115,29 @@ const getPageProduct = function(camera){
 
   // local storage
   let addCart = document.querySelector("#addCart")
-
-  addCart.addEventListener("click",()=>{
+  addCart.addEventListener("click", function event (){
     
-    let ls=JSON.parse(localStorage.getItem("produit"));
+    let ls =JSON.parse(localStorage.getItem("produit"));
     objet.quantite = productQty;
-     if (ls){
-     
-      ls.push(objet);
-      localStorage.setItem("produit", JSON.stringify(ls));
-      popupconfirmation();
-     }
+    if(objet.option){
+      if (ls){
+        ls.push(objet);
+        localStorage.setItem("produit", JSON.stringify(ls));
+        popupconfirmation();
+      
+       } else{
+       ls=[];
+       ls.push(objet);
+       localStorage.setItem("produit", JSON.stringify(ls));
+       popupconfirmation();
+       }
+       document.querySelector('#lense-select').setAttribute("disabled","disabled")
+       addCart.removeEventListener("click", event);
+    } else{
+      alert("choisir une option")
+    }
 
-   else{
-     ls=[];
-     ls.push(objet);
-     localStorage.setItem("produit", JSON.stringify(ls));
-     popupconfirmation();
-  }
-  console.log(ls)
+ 
 })
 //fonction fenêtre popup
 const popupconfirmation= () =>{
@@ -170,6 +174,7 @@ yesAnswer.addEventListener("click",()=>{
  notYetAnswer.addEventListener("click",()=>{
    document.location.href="index.html"
  })
+
 }
 }
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
