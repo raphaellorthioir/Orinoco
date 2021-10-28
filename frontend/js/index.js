@@ -43,9 +43,12 @@ import {url,callApi} from './modules/callApi.js'
             icon.setAttribute('class','fas fa-camera-retro')
             let text =document.createElement('p')
             link.appendChild(text)
-            text.textContent="Je flash !";
+            text.textContent="Je flash !"
           };
 
+          let cartCount =document.querySelector("#count")
+          let ls = JSON.parse(localStorage.getItem("produit"))
+          cartCount.textContent=`${ls.length}`
    
 
    

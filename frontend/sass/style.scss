@@ -1,5 +1,5 @@
 body{
-    font-size: 1em;
+    font-size: 1,5em;
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
   
@@ -312,6 +312,9 @@ nav{
             display: block;
             animation: cartSlide 1s ease forwards;
         }
+        #count{
+            display: none;
+        }
     }
 
     a{
@@ -398,14 +401,13 @@ nav{
  }
 
 #count{
-    font-size: 25px;
-    margin-left: 10px;
+    font-size: 1.5em;
     font-weight: 600;
 }
 
 .cartIcon{
     color: black;
-    font-size: 25px;
+    font-size: 1.5em;
 
 }
 
@@ -638,31 +640,47 @@ figcaption{
 }
 
  .addCartBtn{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-     background: #cfcfcf;
-     border: solid black 1px;
-     border-radius: 30px;
-     font-size: 20px;
-     padding: 10px 10px;
+    
+     margin-left: auto;
+     margin-right: auto;
+     background-color: #4FB0FD;
+     border-radius: 3px;
+     color: white;
+     font-weight: 600;
+     font-size: 1.5em;
+     padding: 3px 10px;
      cursor: pointer;
+     
      &:hover{
-         color: white;
-        animation: addCartAnim 0.3s ease forwards ;
-      
-     }
+        
+        animation: addCartAnim 0.1s ease forwards ;
+       }
+    &:active{
+        animation: addCartReduce 0.s ease forwards;
+    }
  }
  @keyframes addCartAnim{
      from{
-        background: #cfcfcf;
+        
      }
      to{
-        background: linear-gradient(45deg, rgba(252,176,69,0.8491771708683473) 0%, rgba(152,58,180,0.8435749299719888) 100%);
         box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.514) ;
-        transform: scale(1.1);
+        transform: scale(1.05);
      }
  }
+ @keyframes addCartReduce {
+     from{
+         transform: scale(1.1);
+         
+     }
+     to{
+        
+         transform: scale(1.05);
+         box-shadow: 0px 0px 5px 5px ;
+         
+     }
+ } 
+
  #showProduct{
      img{
          width: 300px;
@@ -853,9 +871,7 @@ label{
         height: 44px;
         font-size: 1em;
     }
-    .addCartBtn{
-        height: 48px;
-    }
+    
     .table{
         width: 100%;
     }

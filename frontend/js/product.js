@@ -37,8 +37,8 @@ const url = `http://localhost:3000/api/cameras/${id}`;
           })()
          
          
-       
-         let objet={}
+       let objet={}
+     
          
         
 // fonction qui affiche le produit avec image, nom, prix, description , notation et liens de partage//.
@@ -60,8 +60,10 @@ const getPageProduct = function(camera){
 
 
   objet={
+     image: camera.imageUrl,
     prix:camera.price
-  }
+   }
+   
     let display = document.getElementById('showProduct')
     let img = document.createElement('img')
     display.appendChild(img)
@@ -102,30 +104,44 @@ const getPageProduct = function(camera){
        
        productQty++
        qty.textContent =`${productQty}`;
-      
+      objet.quantite =productQty;
        })
      lessBtn.addEventListener("click",() =>{
        if(productQty>1){
         productQty--
         qty.textContent=`${productQty}`
-        
+        objet.quantite= productQty
          }
         })
         
 
   // local storage
   let addCart = document.querySelector("#addCart")
+  
   addCart.addEventListener("click", function event (){
     
     let ls =JSON.parse(localStorage.getItem("produit"));
-    objet.quantite = productQty;
+    
     if(objet.option){
       if (ls){
-        ls.push(objet);
-        localStorage.setItem("produit", JSON.stringify(ls));
-        popupconfirmation();
-      
-       } else{
+        let objTrouve = false
+        for(let i=0; i < ls.length; i++){
+          console.log(objet.id, ls[i].id, objet.option, ls[i].option)
+          if(objet.id === ls[i].id && objet.option === ls[i].option){ 
+            
+            objTrouve=true
+            ls[i].quantite = objet.quantite + ls[i].quantite
+            console.log(objet.quantite)
+            }
+           
+        }
+        if(!objTrouve){
+          ls.push(objet)
+   }
+         localStorage.setItem("produit", JSON.stringify(ls));
+          popupconfirmation();
+         } else{
+       
        ls=[];
        ls.push(objet);
        localStorage.setItem("produit", JSON.stringify(ls));
@@ -136,9 +152,10 @@ const getPageProduct = function(camera){
     } else{
       alert("choisir une option")
     }
-
- 
+    let cartCount =document.querySelector("#count")
+    cartCount.textContent=`${ls.length}`
 })
+
 //fonction fenêtre popup
 const popupconfirmation= () =>{
  /* if(window.confirm( `${objet.name} avec option: ${objet.option} a bien été ajouté au panier
@@ -176,6 +193,8 @@ yesAnswer.addEventListener("click",()=>{
  })
 
 }
+
+
 }
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
