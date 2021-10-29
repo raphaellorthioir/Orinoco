@@ -43,8 +43,8 @@
         </nav>
     </header>
     <main>
-        <div class="align space-b respProductPage">
-            <section>
+        <div class="align  respProductPage">
+            <section id="imgSection" >
                 <div id="showProduct" class=" align padding responsiveCol ">
                   
                    <!-- <img src="../img/camera.jpg" alt="Caméra model Zurs 50S">
@@ -72,10 +72,10 @@
                         </div>
                 </div>
             </section>   
-            <section>
+            <section id="cartSection">
                 <div class=" addCartArea col  space center">
-                    <div class=" col ">
-                       <h2><label for="lens-select">Lentilles de caméra</label></h2> 
+                    <div class=" col  ">
+                       <p>Lentilles de caméra</p> 
 
                        <select name="lenses" id="lense-select"  required >
                            <option value="">Choix de lentille</option>
@@ -84,14 +84,14 @@
                        </select>
                        
                     </div>
-                    <div class="align center quantity">
-                        <h2>Quantité:</h2>
-                        <div class=" align howMuchLine ">
+                        
+                        <div class=" align center">
+                            <p id="spaceQty">Quantité:</p>
                             <button id="lessBtn" class="howMuchBtn" type="button">-</button>
                             <div id="productQty" class="chooseNumber"></div>
                             <button id="plusBtn"class="howMuchBtn" type="button">+</button>
                             </div>
-                    </div>
+                
                     <div href="#" id="addCart" class="addCartBtn" type="submit"> Ajouter au panier</div>
                 </div>
              </section>

@@ -9,7 +9,7 @@ article {
 }
 
 select {
-  width: 150px;
+  font-size: 1em;
 }
 
 #indexMargin {
@@ -19,10 +19,6 @@ select {
 h3 {
   font-size: 20px;
   margin-bottom: 30px;
-}
-
-p {
-  margin: 2px;
 }
 
 li .nameCamera {
@@ -39,22 +35,24 @@ li .nameCamera {
 }
 
 .addCartArea {
-  width: 400px;
   height: 100%;
-  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
   border-left: rgba(0, 0, 0, 0.472) solid 2px;
+}
+
+#imgSection {
+  width: 80%;
+}
+
+#cartSection {
+  width: 20%;
 }
 
 #lens-select {
   width: 200px;
   height: 30px;
   font-size: 16px;
-}
-
-.quantity {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .photoArea {
@@ -238,8 +236,8 @@ li .nameCamera {
   color: #00acee;
 }
 
-.howMuchLine {
-  margin-left: 10px;
+#spaceQty {
+  margin-right: 10px;
 }
 
 .howMuchBtn {
@@ -257,6 +255,8 @@ li .nameCamera {
 
 .padding {
   padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
 }
 
 .col {
@@ -774,7 +774,7 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
   background-color: #4FB0FD;
-  border-radius: 10px;
+  border-radius: 3px;
   color: white;
   font-weight: 600;
   font-size: 1.5em;
@@ -822,8 +822,8 @@ figcaption {
   }
 }
 #showProduct img {
-  width: 300px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
 }
 
 .priceProduct {

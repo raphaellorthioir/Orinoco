@@ -93,7 +93,7 @@ const getPageProduct = function(camera){
      // gestion quantité de produit
      
      var productQty=1;
-     
+     objet.quantite = productQty
      let lessBtn = document.querySelector("#lessBtn")
      let plusBtn = document.querySelector("#plusBtn")
      let qty = document.getElementById('productQty')
@@ -117,10 +117,11 @@ const getPageProduct = function(camera){
 
   // local storage
   let addCart = document.querySelector("#addCart")
-  
+  let ls =JSON.parse(localStorage.getItem("produit"));
+  let cartCount =document.querySelector("#count")
+  cartCount.textContent=`${ls.length}`
   addCart.addEventListener("click", function event (){
     
-    let ls =JSON.parse(localStorage.getItem("produit"));
     
     if(objet.option){
       if (ls){
@@ -138,7 +139,9 @@ const getPageProduct = function(camera){
         if(!objTrouve){
           ls.push(objet)
    }
-         localStorage.setItem("produit", JSON.stringify(ls));
+        
+          cartCount.textContent=`${ls.length}`
+          localStorage.setItem("produit", JSON.stringify(ls));
           popupconfirmation();
          } else{
        
@@ -151,9 +154,8 @@ const getPageProduct = function(camera){
        addCart.removeEventListener("click", event);
     } else{
       alert("choisir une option")
-    }
-    let cartCount =document.querySelector("#count")
-    cartCount.textContent=`${ls.length}`
+    } 
+  
 })
 
 //fonction fenêtre popup
