@@ -118,29 +118,22 @@ const getPageProduct = function(camera){
   // local storage
   let addCart = document.querySelector("#addCart")
   let ls =JSON.parse(localStorage.getItem("produit"));
-  let cartCount =document.querySelector("#count")
-  cartCount.textContent=`${ls.length}`
   addCart.addEventListener("click", function event (){
-    
+    let count
     
     if(objet.option){
       if (ls){
         let objTrouve = false
         for(let i=0; i < ls.length; i++){
-          console.log(objet.id, ls[i].id, objet.option, ls[i].option)
           if(objet.id === ls[i].id && objet.option === ls[i].option){ 
-            
             objTrouve=true
             ls[i].quantite = objet.quantite + ls[i].quantite
-            console.log(objet.quantite)
             }
-           
-        }
+           }
         if(!objTrouve){
           ls.push(objet)
-   }
-        
-          cartCount.textContent=`${ls.length}`
+           }
+          
           localStorage.setItem("produit", JSON.stringify(ls));
           popupconfirmation();
          } else{
@@ -155,7 +148,8 @@ const getPageProduct = function(camera){
     } else{
       alert("choisir une option")
     } 
-  
+    cartCount.textContent=`${ls.length}`
+   
 })
 
 //fonction fenêtre popup

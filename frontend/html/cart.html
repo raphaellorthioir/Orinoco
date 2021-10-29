@@ -24,58 +24,46 @@
                  <a class="cartIcon align center" href="cart.html"><i class="fas fa-running"></i><i class="fas fa-cart-arrow-down"></i></a>
                  <div id="count"></div>
             </div>
-             <div class="cartContainer "> <!-- shows the products in cart-->
-              <!--  <p>Votre panier</p>
-                 <ul>
-                    <li>
-                         <a class="align space center" href="product.html">
-                            <img src="../img/camera.jpg" width="70" height="50" alt="">
-                             <div class="nameCamera"> Caméra Zurs 50S <span class="numberOfProduct">(x1)</span></div>
-                            <div class="totalProductPrice"> 150 €</div>
-                         </a>
-                         <div class="deleteProduct">Supprimer du panier</div>
-                     </li>
-                </ul>
-                <div> Sous-total: <span class="cartValue"> 150€</span></div>> -->
-            </div>  
         </nav>
     </header>
     <main>
         <section class="align space-b responsiveCol ">
             <div  class="table">
                <h1>Votre Panier</h1>
-               <table>
-                   <thead>
-                       <tr>
+              <div id="divTable">
+               <table id="table">
+                    <thead>
+                         <tr>
                            <th colspan="1"> Description</th>
-                       
-                       
-                          <th colspan="1">Prix unitaire</th> 
-                       
-                       
+                           <th colspan="1">Prix unitaire</th> 
                            <th colspan="1">Quantité</th>
                        
                         <th colspan="1">Total</th>
                        </tr>
                    </thead>
-                   <tbody >
-                       <tr>
-                           <td id="description" class="align center">
-                               <!--<a href="product.html"> <img src="../img/camera.jpg" width="70" height="50" alt=""></a> 
-                                <p class="modelCamera"> Caméra Zurs 50S</p>-->
-                            </td>
-                           <td id="price"></td>
-                           <td id="qty">
-                            <div class=" align center">
-                                <button class="howMuchBtn" type="button">-</button>
-                                <div id="chooseQty"class="chooseNumber"></div>
-                               <button class="howMuchBtn" type="button">+</button>
-                             </div>
-                           </td>
-                           <td id="total"></td>
-                       </tr>
+                   <tbody id="createLine" >
+                      <!-- <tr id="createLine">
+                            <td id="descriptionProduit" class="align center">
+                                
+                                <a href="product.html"> <img src="../img/camera.jpg" width="70" height="50" alt=""></a>
+                                    <div class= "col "> 
+                                    <p class="modelCamera"> Caméra Zurs 50S</p>
+                                    <p> Option:</p>
+                                </div>
+                                </td>
+                            <td id="price"></td>
+                            <td id="qty">
+                                <div class=" align center">
+                                    <button id="lessBtn" class="howMuchBtn" type="button">-</button>
+                                    <div id="productQty" class="chooseNumber"></div>
+                                    <button id="plusBtn"class="howMuchBtn" type="button">+</button>
+                                    </div>
+                                    </td>
+                            <td id="total"></td>
+                       </tr>-->
                    </tbody>
-               </table> 
+                </table> 
+             </div>
             </div>
             <div class="col form center  ">
                 <h2>Coordonnées</h2>

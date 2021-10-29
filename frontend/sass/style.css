@@ -867,6 +867,7 @@ td {
 }
 td img {
   margin-right: 20px;
+  width: 200px;
 }
 
 tr {
