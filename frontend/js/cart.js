@@ -20,7 +20,10 @@ import {callApi, url} from "./modules/callApi.js"
   })()
  
   let ls=JSON.parse(localStorage.getItem("produit"));
-  
+  let countView =document.querySelector("#count")
+  if(!ls){
+    countView.textContent="0"
+ } else{countView.textContent=`${ls.length}`}
  
   function getListProduct(camera,ls){
 
@@ -75,10 +78,22 @@ import {callApi, url} from "./modules/callApi.js"
 
           
           let textTotal= document.createElement("td")
-          let  total= ls[i].quantite * ls[i].prix
           tr.appendChild(textTotal)
-          textTotal.textContent=`${total} €`
-          let allTotal
+          let divPriceCancel =document.createElement("div")
+          textTotal.appendChild(divPriceCancel)
+          divPriceCancel.setAttribute("class"," align center space-b ")
+          divPriceCancel.setAttribute("id","divCancelProduct")
+          let totalPrice = document.createElement("p")
+          divPriceCancel.appendChild(totalPrice)
+          let  total= ls[i].quantite * ls[i].prix
+          totalPrice.textContent=`${total} €`
+          let cancelBtn = document.createElement("button")
+          cancelBtn.setAttribute("id","cancelProduct")
+          let cancelBtnIcon = document.createElement("i")
+          cancelBtnIcon.setAttribute("class","fas fa-times")
+          cancelBtn.appendChild(cancelBtnIcon)
+          divPriceCancel.appendChild(cancelBtn)
+         
 
           lessBtn.addEventListener("click", ()=>{
            
@@ -87,7 +102,7 @@ import {callApi, url} from "./modules/callApi.js"
               localStorage.setItem("produit",JSON.stringify(ls))
               divCurrentQty.textContent=`${ls[i].quantite}`
               total = total - ls[i].prix
-              textTotal.textContent=`${total}€`
+              totalPrice.textContent=`${total}€`
               }
               getAllTotal();
          });
@@ -98,16 +113,43 @@ import {callApi, url} from "./modules/callApi.js"
             localStorage.setItem("produit",JSON.stringify(ls))
             divCurrentQty.textContent=`${ls[i].quantite}`
             total = total + ls[i].prix
-            textTotal.textContent=`${total}€`
+            totalPrice.textContent=`${total}€`
             }
             getAllTotal();
          });
+
+        
+
+         cancelBtn.addEventListener("click",()=>{
+        
+          ls.splice(i,1)
+         
+          if(ls.length > 0){
+            tbody.removeChild(tr) 
+            localStorage.setItem("produit",JSON.stringify(ls))
+            countView.textContent=`${ls.length}`
+            getAllTotal();
+          }else{
+            localStorage.removeItem("produit")
+            let parentTable = document.querySelector("#divTable")
+            let childTable = document.querySelector("#table")
+            parentTable.removeChild(childTable)
+            countView.textContent=`0`
+            getAllTotal();
+            
+           
+          }
+         })
+         getAllTotal();
+         
         }
+      
+
       }
-      
-      
+
   }
-  getAllTotal();
+  
+  
 
 
   function getAllTotal(){
@@ -117,5 +159,6 @@ import {callApi, url} from "./modules/callApi.js"
        
       totalCart = totalCart + ((ls[i].quantite * ls[i].prix))
     }
-    totalNode.textContent=`${totalCart} €`
+    totalNode.textContent=`Panier total: ${totalCart} €`
   }
+ 
