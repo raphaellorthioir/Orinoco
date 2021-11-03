@@ -7,7 +7,7 @@
  //on récupère la valeur de la clé indiqué en paramètre
  const id = urlSearchParams.get("id")
 // création d'une constante contenant l'URL avec en paramètre l'id de l'objet//
-const url = `http://localhost:3000/api/cameras/${id}`;
+ const url = `http://localhost:3000/api/cameras/${id}`;
 
 
 
@@ -118,8 +118,11 @@ const getPageProduct = function(camera){
   // local storage
   let addCart = document.querySelector("#addCart")
   let ls =JSON.parse(localStorage.getItem("produit"));
+  let countView =document.querySelector("#count")
+  if(!ls){
+    countView.textContent="0"
+ } else{countView.textContent=`${ls.length}`}
   addCart.addEventListener("click", function event (){
-    let count
     
     if(objet.option){
       if (ls){
@@ -148,8 +151,7 @@ const getPageProduct = function(camera){
     } else{
       alert("choisir une option")
     } 
-    cartCount.textContent=`${ls.length}`
-   
+    countView.textContent=`${ls.length}`
 })
 
 //fonction fenêtre popup

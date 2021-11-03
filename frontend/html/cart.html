@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
         <meta name="description" content="">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-        <script src="../js/cart.js" ></script>
+        <script type="module" src="../js/cart.js" ></script>
         
     </head>
 <body>
@@ -85,9 +85,7 @@
                         <input type="text" id="userAdress" required aria-required="true" placeholder="Votre adresse">
                     </div>
                 </form>
-                <div class="priceLine">
-                    <div> Panier total : <span class="cartValue"> 199.99€</span> </div>
-                </div>
+                 <p id="totalCart"> </p>
                 <input class="validOrder" type="submit" value="Commander">
             </div>
                 

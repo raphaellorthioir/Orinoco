@@ -45,10 +45,13 @@ import {url,callApi} from './modules/callApi.js'
             link.appendChild(text)
             text.textContent="Je flash !"
           };
-
           let cartCount =document.querySelector("#count")
           let ls = JSON.parse(localStorage.getItem("produit"))
-          cartCount.textContent=`${ls.length}`
+          if(ls){
+            cartCount.textContent= `${ls.length}`
+          }
+            else{ cartCount.textContent="0"}
+          
    
 
    

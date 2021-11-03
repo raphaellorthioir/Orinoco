@@ -1,27 +1,16 @@
-const url = 'http://localhost:3000/api/cameras';
 
-async function callApi (){
-  return fetch(url)
- .then((resp) => resp.json())
-  
- // On récupère une Promise qui prend en paramètre les données de l'api//
- .then(function(cameras){
-  return cameras
- })
- .catch(function(error){
-   alert(error)
- });
-} 
+
+import {callApi, url} from "./modules/callApi.js"
 
 ( async function getCartProducts (){
   let cameras = await callApi()
-  let lenses = cameras.lenses
-
+  let camera
   if(ls){
 
     for (camera of cameras){
       
         getListProduct(camera,ls)
+       
      }
    }else{
       let parentTable = document.querySelector("#divTable")
@@ -31,13 +20,9 @@ async function callApi (){
   })()
  
   let ls=JSON.parse(localStorage.getItem("produit"));
-  console.log(ls)
-  //let commande = localStorage.getItem('commande1')
-  //let commandJson = JSON.parse(commande);
-  //let name =commandJson.name
- // console.log(commandJson.name)
-
-  function getListProduct(camera,ls,lense){
+  
+ 
+  function getListProduct(camera,ls){
 
     
       for(let i=0; i<ls.length; i++){
@@ -63,7 +48,7 @@ async function callApi (){
           let nameOption = document.createElement("p") 
           divNameOpt.appendChild(nameModel)
           divNameOpt.appendChild(nameOption)
-          nameOption.textContent=` Option choisie: ${ls[i].option}`
+          nameOption.textContent=`Lentille choisie: ${ls[i].option}`
          
           let tdPrice = document.createElement("td")
           tr.appendChild(tdPrice)
@@ -80,6 +65,7 @@ async function callApi (){
           lessBtn.textContent="-"
           let divCurrentQty = document.createElement("div")
           divCurrentQty.setAttribute("class","chooseNumber")
+          divCurrentQty.setAttribute("id","qty")
           divCurrentQty.textContent=`${ls[i].quantite}`
           divBtnQty.appendChild(divCurrentQty)
           let plusBtn = document.createElement("button")
@@ -87,24 +73,49 @@ async function callApi (){
           plusBtn.setAttribute("class","howMuchBtn")
           divBtnQty.appendChild(plusBtn)
 
-          let total= document.createElement("td")
-          tr.appendChild(total)
-          total.textContent=`${ls[i].quantite * ls[i].prix} €`
+          
+          let textTotal= document.createElement("td")
+          let  total= ls[i].quantite * ls[i].prix
+          tr.appendChild(textTotal)
+          textTotal.textContent=`${total} €`
+          let allTotal
 
+          lessBtn.addEventListener("click", ()=>{
+           
+            if(ls[i].quantite > 1){
+              ls[i].quantite --
+              localStorage.setItem("produit",JSON.stringify(ls))
+              divCurrentQty.textContent=`${ls[i].quantite}`
+              total = total - ls[i].prix
+              textTotal.textContent=`${total}€`
+              }
+              getAllTotal();
+         });
+
+         plusBtn.addEventListener("click", ()=>{
+          if(ls[i].quantite >= 1){
+            ls[i].quantite ++
+            localStorage.setItem("produit",JSON.stringify(ls))
+            divCurrentQty.textContent=`${ls[i].quantite}`
+            total = total + ls[i].prix
+            textTotal.textContent=`${total}€`
+            }
+            getAllTotal();
+         });
         }
-       
-    }
-   
-   /*  let price = document.querySelector("#price")
-    price.textContent =``
-
-    let qty = document.querySelector("#chooseQty")
-    qty.textContent=``
-
-    let total = document.querySelector("#total")
-    total.textContent=``*/
-
-   
+      }
+      
+      
   }
-  
- 
+  getAllTotal();
+
+
+  function getAllTotal(){
+    let totalNode = document.querySelector("#totalCart")
+    let totalCart = 0 ;
+    for (let i=0; i < ls.length; i++) {
+       
+      totalCart = totalCart + ((ls[i].quantite * ls[i].prix))
+    }
+    totalNode.textContent=`${totalCart} €`
+  }
