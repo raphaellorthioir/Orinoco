@@ -10,40 +10,42 @@
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <meta name="description" content="">
         <script src="https://kit.fontawesome.com/05e841d70d.js" crossorigin="anonymous"></script>
-        <script type="" src="../js/list.js" ></script>
+        <script type="module" src="../js/validation.js"></script>
     </head>
 <body>
     <header class="align  mainBackground">
         <div class="logo">
             <a href="index.html"> <img src="../img/logo-orinoco.jpg" alt="Logo de Orincoco"></a>
         </div>
-        <nav>
-    
-            <div class="cart">
-                <a class="cartIcon" href="cart.html"><i class="fas fa-cart-arrow-down"></i></a>
-                <div class="count"> 0</div>
-            </div>
-             <div class="cartContainer "> <!-- shows the products in cart-->
-                <p>Votre panier</p>
-                 <ul>
-                    <li>
-                         <a class="align space" href="product.html">
-                            <img src="../img/camera.jpg" width="70px" height="50px" alt="">
-                             <div class="nameCamera"> Caméra Zurs 50S <span class="numberOfProduct">(x1)</span></div>
-                            <div class="totalProductPrice"> 150 €</div>
-                         </a>
-                     </li>
-                </ul>
-                <div> Sous-total: <span class="cartValue"> 150€</span></div>
-                </div>  
-            </div>
-        </nav>
     </header>
     <main>
-        <div class="commandConfirmed">
-            <p> Merci pour votre commande. La commande n°: <span class="commandId"></span> a bien été enregistrée pour un prix total de <span class="totalPrice"></span></p>
-            <a href="../../index.html"> Retour à l'accueil.</a>
-       
+        <section>
+            <h1 id="titre">Résumé de votre commande</h1>
+            <div class="align space" >
+                
+                <li id="productList">
+                    
+                    <!--<ul>
+                        <div id="image"></div>
+                        <div id="name"></div>
+                        <div id="option"></div>
+                        <div id="quantity"></div>
+                    </ul>-->
+                 </li>
+                 <div id="contact" class="col space">
+                     <h2>Coordonnées enregistrées</h2>
+                     <p >Numéro client: <span id="orderId"></span></p>
+                     <p >Nom:<span id="firstName"></span></p>
+                     <p > Prénom: <span id="lastName"></span></p>
+                     <p >Ville: <span id="city"></span></p>
+                     <p > Adresse: <span id="address"></span></p>
+                     <p > e-mail : <span id="email"></SPan></p>
+                     <p >Total de la commande: <span id="total"></span>€</p>
+
+                 </div>
+            </div>
+            
+        </section>
     </main>
     <footer>
         <div class="align space mainBackground"> 

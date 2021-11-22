@@ -42,6 +42,7 @@ import {url,callApi} from './modules/callApi.js'
             link.appendChild(icon)
             icon.setAttribute('class','fas fa-camera-retro')
             let text =document.createElement('p')
+            text.setAttribute("id","flashText")
             link.appendChild(text)
             text.textContent="Je flash !"
           };
