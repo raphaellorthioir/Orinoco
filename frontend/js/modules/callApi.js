@@ -1,5 +1,6 @@
 export const url = 'http://localhost:3000/api/cameras';
- 
+
+
  export async function callApi (){
     return fetch(url)
    .then((resp) => resp.json())

@@ -980,6 +980,14 @@ li {
   margin-bottom: 10px;
 }
 
+#emptyCartText {
+  font-size: 3em;
+}
+
+#main {
+  text-align: center;
+}
+
 footer h2 {
   text-decoration: underline;
 }

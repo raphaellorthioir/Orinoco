@@ -1,9 +1,35 @@
 
-
 import {callApi, url} from "./modules/callApi.js"
+ 
+
+  let ls=JSON.parse(localStorage.getItem("produit"));
+  let countView =document.querySelector("#count")
+  let totalCart
+  
+   
+  
+   
+  
+  function getAllTotal(){
+    let totalNode = document.querySelector("#totalCart")
+    totalCart = 0 ;
+    for (let i=0; i < ls.length; i++) {
+       
+      totalCart = totalCart + ((ls[i].quantite * ls[i].prix))
+    }
+    totalNode.textContent=`Panier total: ${totalCart} €`
+  }
+ 
+ function emptyCartScreen(){
+   let emptyCartText = document.createElement("p")
+   main.appendChild(emptyCartText)
+   emptyCartText.textContent="Panier vide"
+   emptyCartText.setAttribute("id","emptyCartText")
+ }
+
 
 ( async function getCartProducts (){
-  let cameras = await callApi()
+  let cameras = await callApi(url)
   let camera
   if(ls){
 
@@ -13,14 +39,17 @@ import {callApi, url} from "./modules/callApi.js"
        
      }
    }else{
-      let parentTable = document.querySelector("#divTable")
+/*      let parentTable = document.querySelector("#divTable")
       let childTable = document.querySelector("#table")
-      parentTable.removeChild(childTable)
+      parentTable.removeChild(childTable)*/
+      let main = document.querySelector("#main")
+      let section = document.querySelector("#section") 
+      main.removeChild(section)
+      emptyCartScreen();
     }
   })()
  
-  let ls=JSON.parse(localStorage.getItem("produit"));
-  let countView =document.querySelector("#count")
+  
   if(!ls){
     countView.textContent="0"
  } else{countView.textContent=`${ls.length}`}
@@ -131,34 +160,66 @@ import {callApi, url} from "./modules/callApi.js"
             getAllTotal();
           }else{
             localStorage.removeItem("produit")
-            let parentTable = document.querySelector("#divTable")
-            let childTable = document.querySelector("#table")
-            parentTable.removeChild(childTable)
+            let main = document.querySelector("#main")
+            let section = document.querySelector("#section") 
+            main.removeChild(section)
             countView.textContent=`0`
-            getAllTotal();
-            
-           
-          }
+            emptyCartScreen();
+           }
          })
          getAllTotal();
-         
         }
-      
-
       }
-
-  }
+ }
   
+//formulaire
+
+let userForm = document.querySelector("#orderForm")
+
+userForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  let contact = {} 
+  let products = []
+  let newUser ={
+   contact,
+   products,
+}
   
 
-
-  function getAllTotal(){
-    let totalNode = document.querySelector("#totalCart")
-    let totalCart = 0 ;
-    for (let i=0; i < ls.length; i++) {
-       
-      totalCart = totalCart + ((ls[i].quantite * ls[i].prix))
-    }
-    totalNode.textContent=`Panier total: ${totalCart} €`
-  }
+  
+  contact.firstName = document.querySelector("#firstName").value 
+  contact.lastName = document.querySelector("#lastName").value 
+  contact.address = document.querySelector("#address").value 
+  contact.city = document.querySelector("#city").value
+  contact.email = document.querySelector("#userMail").value
  
+  
+  
+ const urlOrder = fetch("http://localhost:3000/api/cameras/order",{
+
+    method: "POST",
+    body:JSON.stringify(newUser),
+    headers:{
+      "Content-Type":"application/json"
+    }
+})
+
+urlOrder.then(response => response.json()).then( (response)=>{
+  try{
+    
+    response.products=ls
+    getAllTotal()
+    response.totalOrder = totalCart
+    console.log(totalCart)
+    localStorage.setItem("order",JSON.stringify(response))
+    localStorage.removeItem("produit")
+    document.location.href="orderSum.html"
+    
+  }catch(e){
+    console.log("erreur")
+  }
+})
+
+})
+
+
