@@ -19,7 +19,6 @@ import {url,callApi} from './modules/callApi.js'
             let element = document.getElementById('createFigure')
             let figure = document.createElement('figure')
             element.appendChild(figure)
-            figure.setAttribute("id",`startImg1`)
             let bgd =document.createElement('div')
             bgd.classList.add('photoArea', `bgdImg${i}`) // Ajout d'une liste de classe
             figure.appendChild(bgd)
