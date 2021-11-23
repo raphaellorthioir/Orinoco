@@ -49,11 +49,7 @@ li{
 #cartSection{
     width: 20%;
 }
-#lens-select{
-    width: 200px;
-    height: 30px;
-    font-size: 16px;
-}
+
 
 .photoArea{
     width: 208px;
@@ -142,8 +138,8 @@ li{
     width: 100%;
 }
 .product-info{
-    text-align: justify;
-    padding: 0 50px;
+    
+    margin-left: 10px;
     h1{
         margin: 0;
         margin-bottom: 10px;
@@ -155,20 +151,17 @@ li{
         margin-right: 10px;
     }
 }
-.rating{
-    margin-top: 10px;
-    
-    }
+
 
 .fa-star{
     cursor: pointer;
-    padding: 10px;
+    margin: 0 10px;
     color: gray;
+    font-size: 2em;
     
 }
 .stars{
   
-    font-size: 1.7em;
     transition: color 1s ease;
     cursor: pointer;
     
@@ -216,11 +209,7 @@ li{
         transform: scale(1.1);
     }
 }
-.padding{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-}
+
 .col{
     display: flex;
     flex-direction: column;
@@ -582,6 +571,7 @@ figcaption{
  } 
 
  #showProduct{
+     margin: 10px;
      img{
          width: 500px;
          height: 300px;
@@ -787,9 +777,20 @@ label{
     .align{
         flex-direction: unset;
     }
-   
+   #imgSection{
+       width: 100%;
+       
+   }
     .responsiveCol{
         flex-direction: column;
+    }
+    .respProductPage{
+        flex-direction: column;
+    }
+    #cartSection{
+        width: auto;
+        height: 400px;
+        border-top: 1px black solid;
     }
     .product-info{
         padding: 20px 20px;
@@ -803,7 +804,7 @@ label{
     .stars{
         .fa-star{
             margin: 0px 10px;
-            font-size: 48px;
+            font-size: 30px;
         }
     }
     .social{
@@ -815,16 +816,35 @@ label{
             margin: 0 10px;
         }
     }
-   
-  
-    }
-   
-    
-    #lens-select{
-        width: 300px;
-        height: 44px;
+    #lense-select{
+        width:auto;
+        height: 1cm;
         font-size: 1em;
     }
+    #lessBtn,#plusBtn{
+        width: 1cm;
+        height: 1cm;
+        margin: 0 10px;
+    }
+    .chooseNumber{
+        width: 1cm;
+        height: 1cm;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    }
+   
+    @media screen and (max-width:700px){
+        #showProduct{
+           
+            img{
+                width: 400px;
+                height: 300px;
+        }
+
+        }
+    }
+  
     
     .table{
         width: 100%;
