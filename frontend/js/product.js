@@ -37,7 +37,7 @@
           })()
          
          
-       let objet={}
+     let objet={}
      
          
         
@@ -152,47 +152,45 @@ const getPageProduct = function(camera){
       alert("choisir une option")
     } 
     countView.textContent=`${ls.length}`
-})
+  })
 
 //fonction fenêtre popup
-const popupconfirmation= () =>{
- /* if(window.confirm( `${objet.name} avec option: ${objet.option} a bien été ajouté au panier
+  const popupconfirmation= () =>{
+  /* if(window.confirm( `${objet.name} avec option: ${objet.option} a bien été ajouté au panier
 
-  Consulter le panier OK ou revenir à la page d'accueil Annuler`)){
-    window.location.href="cart.html";
-  }else{
-    window.location.href="index.html";
+    Consulter le panier OK ou revenir à la page d'accueil Annuler`)){
+      window.location.href="cart.html";
+    }else{
+      window.location.href="index.html";
+    }
+  }*/
+  let getMain = document.querySelector("main")
+  let popup= document.createElement('div')
+  popup.setAttribute('id','popup')
+  getMain.appendChild(popup)
+  let question = document.createElement('p')
+  popup.appendChild(question)
+  question.textContent="Consulter votre panier ?"
+  let answers = document.createElement('div')
+  answers.setAttribute('id','answers')
+  popup.appendChild(answers)
+  let yesAnswer = document.createElement('p')
+  yesAnswer.textContent="Oui"
+  yesAnswer.setAttribute('id','yes')
+  answers.appendChild(yesAnswer)
+  let notYetAnswer = document.createElement('p')
+  notYetAnswer.textContent="pas encore"
+  notYetAnswer.setAttribute("id","no")
+  answers.appendChild(notYetAnswer)
+
+  yesAnswer.addEventListener("click",()=>{
+    document.location.href="cart.html"
+  })
+  notYetAnswer.addEventListener("click",()=>{
+    document.location.href="index.html"
+  })
+
   }
-}*/
-let getMain = document.querySelector("main")
-let popup= document.createElement('div')
-popup.setAttribute('id','popup')
-getMain.appendChild(popup)
-let question = document.createElement('p')
-popup.appendChild(question)
-question.textContent="Consulter votre panier ?"
-let answers = document.createElement('div')
-answers.setAttribute('id','answers')
-popup.appendChild(answers)
-let yesAnswer = document.createElement('p')
-yesAnswer.textContent="Oui"
-yesAnswer.setAttribute('id','yes')
-answers.appendChild(yesAnswer)
-let notYetAnswer = document.createElement('p')
-notYetAnswer.textContent="pas encore"
-notYetAnswer.setAttribute("id","no")
-answers.appendChild(notYetAnswer)
-
-yesAnswer.addEventListener("click",()=>{
-  document.location.href="cart.html"
-})
- notYetAnswer.addEventListener("click",()=>{
-   document.location.href="index.html"
- })
-
-}
-
-
 }
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
