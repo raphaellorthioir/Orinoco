@@ -669,7 +669,8 @@ figcaption {
 
 #list {
   border: 1px black solid;
-  padding: 5px;
+  padding: 15px;
+  position: relative;
 }
 
 #section {
@@ -724,11 +725,13 @@ input::placeholder {
 }
 
 #cancelProduct {
-  position: relative;
+  position: absolute;
+  margin-top: 5px;
+  margin-right: 5px;
   right: 0;
   top: 0;
-  width: auto;
-  height: auto;
+  width: 32px;
+  height: 32px;
   font-size: 1em;
 }
 

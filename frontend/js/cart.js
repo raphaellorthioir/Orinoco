@@ -116,10 +116,11 @@ import {callApi, url} from "./modules/callApi.js"
           totalProduct.textContent=`Total:${total} €`
           let cancelBtn = document.createElement("button")
           cancelBtn.setAttribute("id","cancelProduct")
-         // let cancelBtnIcon = document.createElement("i")
-          //cancelBtnIcon.setAttribute("class","fas fa-times")
-         // cancelBtn.appendChild(cancelBtnIcon)
-         // textTotal.appendChild(cancelBtn)
+          let cancelBtnIcon = document.createElement("i")
+          cancelBtnIcon.setAttribute("class","fas fa-times")
+          li.appendChild(cancelBtn)
+          cancelBtn.appendChild(cancelBtnIcon)
+         
          
 
           lessBtn.addEventListener("click", ()=>{
@@ -152,7 +153,7 @@ import {callApi, url} from "./modules/callApi.js"
           ls.splice(i,1)
          
           if(ls.length > 0){
-            tbody.removeChild(tr) 
+            ul.removeChild(li) 
             localStorage.setItem("produit",JSON.stringify(ls))
             countView.textContent=`${ls.length}`
             getAllTotal();
