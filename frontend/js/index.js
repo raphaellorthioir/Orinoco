@@ -4,6 +4,7 @@ import {url,callApi} from './modules/callApi.js'
 
 ( async function getAllCameras (){
    let cameras = await callApi()
+   console.log(cameras)
    var i=0;
    let camera;
   for(camera of cameras){
@@ -44,6 +45,7 @@ import {url,callApi} from './modules/callApi.js'
             text.setAttribute("id","flashText")
             link.appendChild(text)
             text.textContent="Je flash !"
+            console.log(camera._id)
           };
           let cartCount =document.querySelector("#count")
           let ls = JSON.parse(localStorage.getItem("produit"))

@@ -9,7 +9,7 @@ export const url = 'http://localhost:3000/api/cameras';
    .then(function(cameras){
     return cameras
    })
-   .catch(function(error){
-     alert(error)
+   .catch(function(){
+     alert("Problèmes de récupération de données")
    });
 } 

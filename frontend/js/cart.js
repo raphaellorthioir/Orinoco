@@ -7,10 +7,7 @@ import {callApi, url} from "./modules/callApi.js"
   let totalCart
   
    
-  
-   
-  
-  function getAllTotal(){
+ function getAllTotal(){
     let totalNode = document.querySelector("#totalCart")
     totalCart = 0 ;
     for (let i=0; i < ls.length; i++) {
@@ -39,9 +36,7 @@ import {callApi, url} from "./modules/callApi.js"
        
      }
    }else{
-/*      let parentTable = document.querySelector("#divTable")
-      let childTable = document.querySelector("#table")
-      parentTable.removeChild(childTable)*/
+
       let main = document.querySelector("#main")
       let section = document.querySelector("#section") 
       main.removeChild(section)
@@ -105,13 +100,7 @@ import {callApi, url} from "./modules/callApi.js"
           plusBtn.setAttribute("class","howMuchBtn")
           productQty.appendChild(plusBtn)
 
-         
-        //  let divPriceCancel =document.createElement("div")
-         // textTotal.appendChild(divPriceCancel)
-         // divPriceCancel.setAttribute("class"," align center space  ")
-         // divPriceCancel.setAttribute("id","divCancelProduct")
-          
-          //divPriceCancel.appendChild(totalPrice)
+       
           let  total= ls[i].quantite * ls[i].prix
           totalProduct.textContent=`Total:${total} €`
           let cancelBtn = document.createElement("button")
@@ -211,12 +200,12 @@ urlOrder.then(response => response.json()).then( (response)=>{
   try{
      
     response.products=ls
-   getAllTotal()
+    getAllTotal()
     response.totalOrder = totalCart
     console.log(totalCart)
     localStorage.setItem("order",JSON.stringify(response))
     localStorage.removeItem("produit")
-    document.location.href="orderSum.html"
+    document.location.href="validation.html"
     
   }catch(e){
     console.log("erreur")

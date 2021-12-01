@@ -53,6 +53,7 @@ let displayLenses = function(lense){
   let optSelected= document.querySelector("#lense-select");
   optSelected.addEventListener("change",()=>{
   objet.option=optSelected.value;
+  
   })
   return objet.option
 }
@@ -61,7 +62,7 @@ const getPageProduct = function(camera){
 
   objet={
      image: camera.imageUrl,
-    prix:camera.price
+     prix:camera.price
    }
    
     let display = document.getElementById('showProduct')
@@ -148,22 +149,17 @@ const getPageProduct = function(camera){
        }
        document.querySelector('#lense-select').setAttribute("disabled","disabled")
        addCart.removeEventListener("click", event);
+       console.log(ls)
     } else{
       alert("choisir une option")
     } 
     countView.textContent=`${ls.length}`
+    console.log(ls)
   })
 
 //fonction fenêtre popup
   const popupconfirmation= () =>{
-  /* if(window.confirm( `${objet.name} avec option: ${objet.option} a bien été ajouté au panier
-
-    Consulter le panier OK ou revenir à la page d'accueil Annuler`)){
-      window.location.href="cart.html";
-    }else{
-      window.location.href="index.html";
-    }
-  }*/
+  
   let getMain = document.querySelector("main")
   let popup= document.createElement('div')
   popup.setAttribute('id','popup')
@@ -191,6 +187,7 @@ const getPageProduct = function(camera){
   })
 
   }
+
 }
  // fonction qui fait apparître les différents choix de lentilles selon le produit affiché dans option.
 
