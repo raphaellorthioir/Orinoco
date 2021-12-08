@@ -169,10 +169,10 @@ li .nameCamera {
   width: 100%;
 }
 
-.product-info {
+#product-info {
   margin-left: 10px;
 }
-.product-info h1 {
+#product-info h1 {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -268,36 +268,6 @@ header {
   height: 70px;
 }
 
-#grayFilter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  filter: grayscale(100%);
-  -webkit-animation: animFilter 3s ease 2s forwards;
-          animation: animFilter 3s ease 2s forwards;
-}
-
-@-webkit-keyframes animFilter {
-  from {
-    filter: grayscale(100%);
-  }
-  100% {
-    filter: grayscale(0);
-  }
-}
-
-@keyframes animFilter {
-  from {
-    filter: grayscale(100%);
-  }
-  100% {
-    filter: grayscale(0);
-  }
-}
 a {
   text-decoration: none;
   color: black;
@@ -476,7 +446,7 @@ figure .showImage {
   height: 100%;
   opacity: 0;
   filter: sepia(1);
-  transition: filter 1.5s ease;
+  transition: filter 1s ease;
   margin-left: auto;
   margin-right: auto;
   -webkit-animation: flashImg 1s linear 2.5s forwards;
@@ -486,7 +456,7 @@ figure #flashText {
   margin: 0;
 }
 figure:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.349) 5px 0px 3px 1px;
   z-index: 1;
 }
@@ -569,10 +539,10 @@ figure:hover .showImage {
     opacity: 1;
   }
 }
-.border3d {
+.border {
   border-width: 3px 0 3px 0;
   border-style: outset;
-  padding: 10px 0;
+  padding: 50px 0;
   background-color: white;
 }
 
@@ -650,6 +620,12 @@ figcaption {
     box-shadow: 0px 0px 5px 5px;
   }
 }
+#cartPageImg {
+  width: 350px;
+  height: auto;
+  margin-right: 5px;
+}
+
 #showProduct {
   margin: 10px;
 }
@@ -784,7 +760,12 @@ li {
 }
 
 #contact {
-  width: 30%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 1px black solid;
   padding: 10px;
   margin-bottom: 10px;
@@ -818,6 +799,11 @@ footer h2 {
 }
 footer ul {
   padding: 0;
+}
+
+#validPageImg {
+  width: 200px;
+  height: 200px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -982,6 +968,7 @@ footer ul {
 
   #list {
     flex-direction: column;
+    padding-right: 45px;
   }
   #list img {
     width: 250px;
@@ -994,6 +981,11 @@ footer ul {
     width: 300px;
     height: 200px;
   }
+
+  #cancelProduct {
+    width: 42px;
+    height: 42px;
+  }
 }
 @media screen and (max-width: 1400px) {
   #blockValidation {
@@ -1002,12 +994,22 @@ footer ul {
   }
 
   #contact {
-    width: auto;
+    margin: 5px 5px;
   }
 
   #boxList {
     -webkit-padding-start: 0px;
             padding-inline-start: 0px;
     margin-left: 0;
+  }
+}
+@media screen and (max-width: 430px) {
+  #validPageImg {
+    width: 100px;
+    height: 100px;
+  }
+
+  #product-info {
+    padding: 0;
   }
 }/*# sourceMappingURL=style.css.map */
