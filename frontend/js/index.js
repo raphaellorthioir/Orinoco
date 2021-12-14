@@ -18,7 +18,7 @@ function displayCameras (camera,i) {
     let figure = document.createElement('figure')
     element.appendChild(figure)
     let bgd =document.createElement('div')
-    bgd.classList.add('photoArea', `bgdImg${i}`) // Ajout d'une liste de classe
+    bgd.classList.add('photoArea', `bgdImg${i}`) // Ajout d'une liste de classe ,  animation du flash avec différents délais
     figure.appendChild(bgd)
     let img = document.createElement('img')
     bgd.appendChild(img);

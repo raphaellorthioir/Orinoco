@@ -21,7 +21,7 @@ let objet={}
 
 let displayLenses = function(lense){
  
- let select = document.getElementById('lense-select').appendChild(document.createElement('option'))
+  let select = document.getElementById('lense-select').appendChild(document.createElement('option'))
   select.setAttribute("value",lense)
   select.setAttribute("id","option")
   select.textContent= lense
@@ -34,7 +34,9 @@ const getPageProduct = function(camera){
 
   objet={
       image: camera.imageUrl,
-      prix:camera.price
+      prix:camera.price,
+      name: camera.name,
+      id: camera._id
     }
    
   let display = document.getElementById('showProduct')
@@ -59,12 +61,7 @@ const getPageProduct = function(camera){
   info.appendChild(rate)
   let social =document.getElementById('social')
   info.appendChild(social)
-
-     
-  objet.name= camera.name;
-  objet.id = camera._id;
-     
-     
+       
   var productQty=1;
   objet.quantite = productQty
   let lessBtn = document.querySelector("#lessBtn")

@@ -19,6 +19,9 @@ function getAllTotal(){
 }
  
 function emptyCartScreen(){
+  let main = document.querySelector("#main")
+  let section = document.querySelector("#section")
+  main.removeChild(section)
   let emptyCartText = document.createElement("p")
   main.appendChild(emptyCartText)
   emptyCartText.textContent="Panier vide"
